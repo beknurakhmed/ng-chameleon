@@ -82,8 +82,8 @@ export class ChButtonComponent {
     buttonVariants({
       variant:     this.variant,
       size:        this.size,
-      isFullWidth: this.fullWidth,
-      isIconOnly:  this.iconOnly,
+      isFullWidth: this.fullWidth ? 'true' : 'false',
+      isIconOnly:  this.iconOnly  ? 'true' : 'false',
     })
   );
 

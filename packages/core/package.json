@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "One Angular library. Four design systems. React-level DX.",
   "keywords": ["angular", "ui", "components", "design-system", "tailwind"],
-  "author": "ng-chameleon contributors",
+  "author": "Beknur Akhmedov <axmbek@gmail.com> (https://github.com/beknurakhmed)",
   "license": "MIT",
   "repository": {
     "type": "git",

@@ -68,8 +68,8 @@ export const buttonVariants = cva(
     defaultVariants: {
       variant:     'solid',
       size:        'md',
-      isFullWidth: false,
-      isIconOnly:  false,
+      isFullWidth: 'false',
+      isIconOnly:  'false',
     },
   }
 );

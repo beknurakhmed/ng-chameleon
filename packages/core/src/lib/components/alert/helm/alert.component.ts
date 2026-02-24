@@ -7,8 +7,8 @@ import {
   output,
 } from '@angular/core';
 import { NgIf } from '@angular/common';
-import { cva, cx } from '../../utils/class-merge.util';
-import { ChameleonColorScheme } from '../../tokens/design-tokens.interface';
+import { cva, cx } from '../../../utils/class-merge.util';
+import { ChameleonColorScheme } from '../../../tokens/design-tokens.interface';
 
 export type AlertStatus  = 'info' | 'success' | 'warning' | 'error';
 export type AlertVariant = 'solid' | 'subtle' | 'left-accent' | 'top-accent';
