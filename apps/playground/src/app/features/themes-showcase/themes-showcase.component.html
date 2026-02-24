@@ -67,6 +67,36 @@
     </div>
   </div>
 
+  <!-- Side-by-side comparison -->
+  <section class="themes__section pg-section">
+    <h2 class="pg-section__title">Side-by-side comparison</h2>
+    <p class="themes__section-sub">
+      The same components rendered with all 4 design systems simultaneously.
+    </p>
+
+    <div class="theme-compare-grid">
+      <div
+        *ngFor="let td of themeDemos"
+        class="theme-compare-cell"
+        [attr.data-ch-theme]="td.theme">
+        <p class="theme-compare-label">{{ td.meta.label }}</p>
+        <div class="theme-compare-components">
+          <div class="demo-row">
+            <ch-button variant="solid" colorScheme="primary" size="sm">Primary</ch-button>
+            <ch-button variant="outline" colorScheme="primary" size="sm">Outline</ch-button>
+          </div>
+          <div class="demo-row" style="margin-top: 8px">
+            <ch-badge colorScheme="primary">Badge</ch-badge>
+            <ch-badge colorScheme="success" variant="subtle">Success</ch-badge>
+          </div>
+          <ch-alert status="info" variant="subtle" style="margin-top: 8px; font-size: 0.8rem;">
+            Info alert
+          </ch-alert>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Comparison section -->
   <section class="themes__section pg-section">
     <h2 class="pg-section__title">Same components. Different design systems.</h2>

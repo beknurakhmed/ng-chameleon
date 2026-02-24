@@ -16,6 +16,7 @@ export const inputVariants = cva(
       variant: {
         outline: [
           'border border-[color:--ch-input-border] rounded-[--ch-input-radius] px-[--ch-input-px]',
+          'hover:border-[color:--ch-input-hover-border]',
           'focus:border-[color:--ch-input-border-focus] focus:ring-[length:0] focus:[box-shadow:--ch-input-ring]',
           'aria-invalid:border-[color:--ch-error] aria-invalid:[box-shadow:0_0_0_3px_color-mix(in_srgb,var(--ch-error)_35%,transparent)]',
         ].join(' '),

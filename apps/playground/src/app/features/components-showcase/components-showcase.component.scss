@@ -52,6 +52,12 @@
     color: var(--ch-primary);
     background: var(--ch-primary-subtle);
   }
+
+  &--active {
+    color: var(--ch-primary);
+    background: var(--ch-primary-subtle);
+    font-weight: var(--ch-weight-medium);
+  }
 }
 
 // ── Content ───────────────────────────────────────────────────────────────────

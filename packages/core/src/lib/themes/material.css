@@ -75,7 +75,7 @@
   --ch-input-bg: transparent;
   --ch-input-radius: 4px;
   --ch-input-ring: none;
-  --ch-card-bg:      var(--ch-bg-subtle);
+  --ch-card-bg:      color-mix(in srgb, var(--ch-primary) 5%, var(--ch-bg));
   --ch-card-border:  transparent;
   --ch-card-radius:  16px;
   --ch-card-shadow:  none;
@@ -84,6 +84,39 @@
   --ch-badge-font-size: .6875rem;
   --ch-badge-font-weight: var(--ch-weight-medium);
   --ch-badge-px:6px; --ch-badge-py:2px;
+
+  /* ── M3 Surface & State Layer System ──────────────────────── */
+  --ch-on-primary: #FFFFFF;
+  --ch-on-primary-container: #21005D;
+  --ch-on-secondary: #FFFFFF;
+  --ch-on-secondary-container: #1D192B;
+  --ch-on-error: #FFFFFF;
+  --ch-on-error-container: #410E0B;
+  --ch-surface-variant: #E7E0EC;
+  --ch-on-surface-variant: #49454F;
+  --ch-outline: #79747E;
+  --ch-outline-variant: #CAC4D0;
+
+  /* ── M3 Elevation Tinted Surfaces ─────────────────────────── */
+  --ch-elevation-1: color-mix(in srgb, var(--ch-primary) 5%, var(--ch-bg));
+  --ch-elevation-2: color-mix(in srgb, var(--ch-primary) 8%, var(--ch-bg));
+  --ch-elevation-3: color-mix(in srgb, var(--ch-primary) 11%, var(--ch-bg));
+  --ch-elevation-4: color-mix(in srgb, var(--ch-primary) 12%, var(--ch-bg));
+  --ch-elevation-5: color-mix(in srgb, var(--ch-primary) 14%, var(--ch-bg));
+
+  /* ── M3 Button Tokens ─────────────────────────────────────── */
+  --ch-btn-letter-spacing: 0.01em;
+  --ch-btn-shadow: none;
+  --ch-btn-outline-border: var(--ch-primary);
+
+  /* ── M3 Alert ─────────────────────────────────────────────── */
+  --ch-alert-radius: 12px;
+
+  /* ── M3 Card Header ───────────────────────────────────────── */
+  --ch-card-header-border: transparent;
+
+  /* ── M3 Input Hover ───────────────────────────────────────── */
+  --ch-input-hover-border: var(--ch-input-border);
 }
 
 .ch-theme-material.dark,
@@ -94,5 +127,16 @@
   --ch-text:#E6E1E5; --ch-text-subtle:#CAC4D0; --ch-text-muted:#938F99;
   --ch-border:#49454F; --ch-border-strong:#938F99;
   --ch-error:#F2B8B5; --ch-error-subtle:#8C1D18;
-  --ch-card-bg:#2B2930;
+  --ch-card-bg: color-mix(in srgb, var(--ch-primary) 5%, #1C1B1F);
+
+  /* M3 dark surface/elevation */
+  --ch-surface-variant: #49454F;
+  --ch-on-surface-variant: #CAC4D0;
+  --ch-outline: #938F99;
+  --ch-outline-variant: #49454F;
+  --ch-elevation-1: color-mix(in srgb, var(--ch-primary) 5%, #1C1B1F);
+  --ch-elevation-2: color-mix(in srgb, var(--ch-primary) 8%, #1C1B1F);
+  --ch-elevation-3: color-mix(in srgb, var(--ch-primary) 11%, #1C1B1F);
+  --ch-elevation-4: color-mix(in srgb, var(--ch-primary) 12%, #1C1B1F);
+  --ch-elevation-5: color-mix(in srgb, var(--ch-primary) 14%, #1C1B1F);
 }

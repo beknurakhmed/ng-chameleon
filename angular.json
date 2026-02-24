@@ -56,7 +56,7 @@
           "options": {
             "outputPath": "dist/playground",
             "index": "apps/playground/src/index.html",
-            "browser": "apps/playground/src/main.ts",
+            "main": "apps/playground/src/main.ts",
             "polyfills": ["zone.js"],
             "tsConfig": "apps/playground/tsconfig.app.json",
             "assets": [
