@@ -1,8 +1,9 @@
 import {
   Component, Input, Output, EventEmitter, ChangeDetectionStrategy,
   signal, computed, ViewEncapsulation, ContentChildren, QueryList,
-  AfterContentInit, OnDestroy, Subscription,
+  AfterContentInit, OnDestroy,
 } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 
 export type TabsVariant = 'line' | 'enclosed' | 'soft-rounded' | 'solid-rounded';

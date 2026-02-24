@@ -140,4 +140,5 @@ export const en = {
   },
 } as const;
 
-export type Translation = typeof en;
+type DeepMutable<T> = { -readonly [K in keyof T]: T[K] extends object ? DeepMutable<T[K]> : string };
+export type Translation = DeepMutable<typeof en>;

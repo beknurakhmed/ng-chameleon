@@ -137,6 +137,29 @@
   --ch-badge-radius: var(--ch-radius-full);
   --ch-badge-font-size:12px; --ch-badge-font-weight: var(--ch-weight-normal);
   --ch-badge-px:8px; --ch-badge-py:0;
+
+  /* ── Antd Fill Hierarchy ──────────────────────────────────── */
+  --ch-fill:           rgba(0,0,0,0.06);
+  --ch-fill-secondary: rgba(0,0,0,0.04);
+  --ch-fill-tertiary:  rgba(0,0,0,0.02);
+
+  /* ── Antd Hover Border ────────────────────────────────────── */
+  --ch-primary-border-hover: #69b1ff;
+
+  /* ── Antd Button Tokens ───────────────────────────────────── */
+  --ch-btn-shadow:         0 2px 0 rgba(0,0,0,0.02);
+  --ch-btn-primary-shadow: 0 2px 0 rgba(5,145,255,0.1);
+  --ch-btn-outline-border: var(--ch-border);
+  --ch-btn-letter-spacing: 0;
+
+  /* ── Antd Alert ───────────────────────────────────────────── */
+  --ch-alert-radius: var(--ch-radius-lg);
+
+  /* ── Antd Card Header ─────────────────────────────────────── */
+  --ch-card-header-border: #f0f0f0;
+
+  /* ── Antd Input Hover ─────────────────────────────────────── */
+  --ch-input-hover-border: var(--ch-primary-hover);
 }
 
 .ch-theme-antd.dark,
@@ -147,4 +170,9 @@
   --ch-border:#424242; --ch-border-strong:#595959;
   --ch-primary-hover:#4096ff;
   --ch-input-bg:#1f1f1f; --ch-card-bg:#1f1f1f;
+
+  /* Antd dark fill/card */
+  --ch-fill: rgba(255,255,255,0.06);
+  --ch-fill-secondary: rgba(255,255,255,0.04);
+  --ch-card-header-border: #303030;
 }

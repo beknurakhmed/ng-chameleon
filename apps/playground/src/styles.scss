@@ -62,6 +62,8 @@ code, pre {
     font-weight: var(--ch-weight-bold);
     margin-bottom: var(--ch-space-6);
     color: var(--ch-text);
+    padding-bottom: var(--ch-space-3);
+    border-bottom: 1px solid var(--ch-border);
   }
 
   &__subtitle {
@@ -82,6 +84,12 @@ code, pre {
   font-size: var(--ch-text-sm);
   color: var(--ch-text);
   line-height: 1.6;
+
+  &--dark {
+    background: #0F172A;
+    color: #E2E8F0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
 }
 
 // ── Utility: screen-reader only ───────────────────────────────────────────────
