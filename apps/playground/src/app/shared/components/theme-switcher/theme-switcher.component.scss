@@ -45,6 +45,15 @@
 
   &__label {
     white-space: nowrap;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 4px 6px;
+    gap: 0;
   }
 }
 

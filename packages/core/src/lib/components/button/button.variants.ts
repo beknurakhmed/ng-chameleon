@@ -13,6 +13,7 @@ export const buttonVariants = cva(
     'disabled:opacity-50 disabled:pointer-events-none',
     'select-none whitespace-nowrap',
     'rounded-[--ch-btn-radius]',
+    'tracking-[--ch-btn-letter-spacing]',
   ].join(' '),
   {
     variants: {
@@ -21,10 +22,11 @@ export const buttonVariants = cva(
           'bg-[--ch-primary] text-[--ch-primary-fg]',
           'hover:bg-[--ch-primary-hover]',
           'active:brightness-95',
+          'shadow-[--ch-btn-shadow]',
         ].join(' '),
 
         outline: [
-          'border border-[color:--ch-primary] text-[color:--ch-primary] bg-transparent',
+          'border border-[color:--ch-btn-outline-border] text-[color:--ch-primary] bg-transparent',
           'hover:bg-[color:--ch-primary-subtle]',
           'active:brightness-95',
         ].join(' '),

@@ -8,7 +8,7 @@
       <ch-badge colorScheme="primary" variant="subtle">v0.1</ch-badge>
     </a>
 
-    <!-- Navigation -->
+    <!-- Navigation (desktop) -->
     <nav class="header__nav" role="navigation" [attr.aria-label]="'header.nav' | translate">
       <a
         *ngFor="let link of navLinks"
@@ -30,9 +30,36 @@
 
       <pg-lang-switcher></pg-lang-switcher>
       <pg-theme-switcher></pg-theme-switcher>
+
+      <!-- Mobile menu toggle -->
+      <button
+        class="header__burger"
+        type="button"
+        aria-label="Toggle menu"
+        (click)="toggleMobileMenu()">
+        <svg *ngIf="!mobileMenuOpen()" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+        <svg *ngIf="mobileMenuOpen()" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
     </div>
 
   </div>
+
+  <!-- Mobile nav dropdown -->
+  <nav class="header__mobile-nav" *ngIf="mobileMenuOpen()" role="navigation">
+    <a
+      *ngFor="let link of navLinks"
+      [routerLink]="link.path"
+      routerLinkActive="header__mobile-link--active"
+      [routerLinkActiveOptions]="{ exact: link.exact }"
+      class="header__mobile-link"
+      (click)="closeMobileMenu()">
+      {{ link.key | translate }}
+    </a>
+  </nav>
 
   <!-- Top loading bar -->
   <div class="header__progress" *ngIf="loading.isLoading()" role="progressbar" [attr.aria-label]="'header.loading' | translate">

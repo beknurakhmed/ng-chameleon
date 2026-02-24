@@ -1,4 +1,4 @@
-import { Component, signal, inject } from '@angular/core';
+import { Component, signal, inject, AfterViewInit, OnDestroy, NgZone } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import type {
   SelectOption, BreadcrumbItem, TableColumn, ComboboxOption,
@@ -12,10 +12,13 @@ import { TranslationService } from '../../core/i18n/translation.service';
   templateUrl: './components-showcase.component.html',
   styleUrls:   ['./components-showcase.component.scss'],
 })
-export class ComponentsShowcaseComponent {
+export class ComponentsShowcaseComponent implements AfterViewInit, OnDestroy {
 
   protected readonly i18n = inject(TranslationService);
+  private readonly zone = inject(NgZone);
+  private observer?: IntersectionObserver;
 
+  readonly activeSection = signal('buttons');
   readonly loading       = signal(false);
   readonly modalOpen     = signal(false);
   readonly drawerOpen    = signal(false);
@@ -155,5 +158,29 @@ export class ComponentsShowcaseComponent {
 
   scrollTo(id: string): void {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  ngAfterViewInit(): void {
+    this.zone.runOutsideAngular(() => {
+      this.observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              this.zone.run(() => this.activeSection.set(entry.target.id));
+            }
+          }
+        },
+        { rootMargin: '-80px 0px -60% 0px', threshold: 0 }
+      );
+
+      for (const section of this.sections) {
+        const el = document.getElementById(section.id);
+        if (el) this.observer.observe(el);
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.observer?.disconnect();
   }
 }

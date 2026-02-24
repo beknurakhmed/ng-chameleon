@@ -72,7 +72,7 @@ const STATUS_COLOR_VARS: Record<AlertStatus, string> = {
       align-items: flex-start;
       gap: var(--ch-space-3);
       padding: var(--ch-space-4);
-      border-radius: var(--ch-radius-md);
+      border-radius: var(--ch-alert-radius, var(--ch-radius-md));
     }
     :host(.ch-alert--subtle)      { background: var(--ch-alert-subtle); color: var(--ch-alert-color); }
     :host(.ch-alert--solid)       { background: var(--ch-alert-color); color: #fff; }

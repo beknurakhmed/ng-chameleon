@@ -55,7 +55,7 @@ export class ChCardComponent {
     :host {
       display: block;
       padding: var(--ch-space-4) var(--ch-card-padding);
-      border-bottom: 1px solid var(--ch-border);
+      border-bottom: 1px solid var(--ch-card-header-border, var(--ch-border));
       font-weight: var(--ch-weight-semibold);
       font-size: var(--ch-text-lg);
       color: var(--ch-text);

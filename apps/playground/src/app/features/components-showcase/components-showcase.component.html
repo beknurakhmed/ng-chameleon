@@ -6,7 +6,9 @@
       <p class="showcase__sidebar-title">{{ 'showcase.title' | translate }}</p>
       <ul class="showcase__sidebar-nav">
         <li *ngFor="let s of sections">
-          <a (click)="scrollTo(s.id)" class="showcase__sidebar-link">{{ s.key | translate }}</a>
+          <a (click)="scrollTo(s.id)"
+             class="showcase__sidebar-link"
+             [class.showcase__sidebar-link--active]="activeSection() === s.id">{{ s.key | translate }}</a>
         </li>
       </ul>
     </nav>

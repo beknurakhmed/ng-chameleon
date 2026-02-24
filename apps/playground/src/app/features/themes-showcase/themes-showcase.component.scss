@@ -147,6 +147,38 @@
   &:hover { text-decoration: underline; }
 }
 
+// ── Side-by-side comparison grid ──────────────────────────────────────────────
+.theme-compare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--ch-space-4);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.theme-compare-cell {
+  padding: var(--ch-space-4);
+  border: 1px solid var(--ch-border);
+  border-radius: var(--ch-radius-lg);
+  background: var(--ch-bg);
+}
+
+.theme-compare-label {
+  font-size: var(--ch-text-xs);
+  font-weight: var(--ch-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ch-text-muted);
+  margin-bottom: var(--ch-space-3);
+}
+
+.theme-compare-components {
+  display: flex;
+  flex-direction: column;
+}
+
 // ── Section ────────────────────────────────────────────────────────────────────
 .themes__section {
   margin-bottom: var(--ch-space-12);

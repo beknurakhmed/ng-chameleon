@@ -175,6 +175,35 @@
   --ch-badge-font-weight:var(--ch-weight-bold);
   --ch-badge-px:         0.5rem;
   --ch-badge-py:         0.125rem;
+
+  /* ── Chakra Gray Scale ────────────────────────────────────── */
+  --ch-gray-50:  #F7FAFC;
+  --ch-gray-100: #EDF2F7;
+  --ch-gray-200: #E2E8F0;
+  --ch-gray-300: #CBD5E0;
+  --ch-gray-400: #A0AEC0;
+  --ch-gray-500: #718096;
+  --ch-gray-600: #4A5568;
+  --ch-gray-700: #2D3748;
+  --ch-gray-800: #1A202C;
+  --ch-gray-900: #171923;
+
+  /* ── Chakra Focus Ring ────────────────────────────────────── */
+  --ch-focus-ring: 0 0 0 3px rgba(66, 153, 225, 0.6);
+
+  /* ── Chakra Button Tokens ─────────────────────────────────── */
+  --ch-btn-shadow:         none;
+  --ch-btn-outline-border: var(--ch-primary);
+  --ch-btn-letter-spacing: 0;
+
+  /* ── Chakra Alert ─────────────────────────────────────────── */
+  --ch-alert-radius: var(--ch-radius-md);
+
+  /* ── Chakra Card Header ───────────────────────────────────── */
+  --ch-card-header-border: var(--ch-border);
+
+  /* ── Chakra Input Hover ───────────────────────────────────── */
+  --ch-input-hover-border: var(--ch-input-border);
 }
 
 /* ── Dark Mode ─────────────────────────────────────────────────── */
