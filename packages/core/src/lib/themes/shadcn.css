@@ -1,0 +1,198 @@
+/* ng-chameleon — Shadcn/ui Theme
+   Apply via: <body class="ch-theme-shadcn"> or ThemeService.setTheme('shadcn')
+*/
+
+@import './base.css';
+
+.ch-theme-shadcn,
+[data-ch-theme='shadcn'] {
+
+  /* ── Fonts ─────────────────────────────────────────────────── */
+  --ch-font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ch-font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ch-font-mono:    'Geist Mono', 'Fira Code', 'Fira Mono', Menlo, monospace;
+
+  /* ── Colors — Primary (Neutral dark) ────────────────────────── */
+  --ch-primary-50:   hsl(210 40% 98%);
+  --ch-primary-100:  hsl(210 40% 96%);
+  --ch-primary-200:  hsl(214 32% 91%);
+  --ch-primary-300:  hsl(213 27% 84%);
+  --ch-primary-400:  hsl(215 20% 65%);
+  --ch-primary-500:  hsl(215 16% 47%);
+  --ch-primary-600:  hsl(215 19% 35%);
+  --ch-primary-700:  hsl(215 25% 27%);
+  --ch-primary-800:  hsl(217 33% 17%);
+  --ch-primary-900:  hsl(222 47% 11%);
+
+  --ch-primary:       hsl(222.2 47.4% 11.2%);
+  --ch-primary-hover: hsl(222.2 47.4% 20%);
+  --ch-primary-subtle:hsl(210 40% 98%);
+  --ch-primary-fg:    hsl(210 40% 98%);
+
+  /* ── Colors — Secondary ─────────────────────────────────────── */
+  --ch-secondary:        hsl(210 40% 96%);
+  --ch-secondary-hover:  hsl(210 40% 90%);
+  --ch-secondary-subtle: hsl(210 40% 98%);
+
+  /* ── Semantic Colors ────────────────────────────────────────── */
+  --ch-success:        hsl(142 76% 36%);
+  --ch-success-hover:  hsl(142 76% 28%);
+  --ch-success-subtle: hsl(138 76% 97%);
+  --ch-success-fg:     hsl(355 100% 99%);
+
+  --ch-warning:        hsl(32 95% 44%);
+  --ch-warning-hover:  hsl(32 95% 36%);
+  --ch-warning-subtle: hsl(48 100% 96%);
+  --ch-warning-fg:     hsl(355 100% 99%);
+
+  --ch-error:          hsl(0 84% 60%);
+  --ch-error-hover:    hsl(0 84% 50%);
+  --ch-error-subtle:   hsl(0 86% 97%);
+  --ch-error-fg:       hsl(355 100% 99%);
+
+  --ch-info:           hsl(221 83% 53%);
+  --ch-info-hover:     hsl(221 83% 43%);
+  --ch-info-subtle:    hsl(213 100% 96%);
+  --ch-info-fg:        hsl(355 100% 99%);
+
+  /* ── Surface Colors ─────────────────────────────────────────── */
+  --ch-bg:             hsl(0 0% 100%);
+  --ch-bg-subtle:      hsl(210 40% 98%);
+  --ch-bg-elevated:    hsl(0 0% 100%);
+  --ch-bg-overlay:     hsl(0 0% 0% / 0.8);
+
+  /* ── Text Colors ────────────────────────────────────────────── */
+  --ch-text:           hsl(222.2 84% 4.9%);
+  --ch-text-subtle:    hsl(215.4 16.3% 46.9%);
+  --ch-text-muted:     hsl(215.4 16.3% 56.9%);
+  --ch-text-disabled:  hsl(215.4 16.3% 76.9%);
+  --ch-text-inverse:   hsl(210 40% 98%);
+
+  /* ── Border ─────────────────────────────────────────────────── */
+  --ch-border:         hsl(214.3 31.8% 91.4%);
+  --ch-border-strong:  hsl(214.3 31.8% 81.4%);
+  --ch-border-focus:   hsl(222.2 47.4% 11.2%);
+
+  /* ── Border Radius ──────────────────────────────────────────── */
+  --ch-radius-none: 0;
+  --ch-radius-sm:   0.375rem;
+  --ch-radius-md:   0.5rem;
+  --ch-radius-lg:   0.75rem;
+  --ch-radius-xl:   1rem;
+  --ch-radius-2xl:  1.25rem;
+  --ch-radius-full: 9999px;
+
+  /* ── Shadows ────────────────────────────────────────────────── */
+  --ch-shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --ch-shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --ch-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --ch-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --ch-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* ── Spacing ────────────────────────────────────────────────── */
+  --ch-space-0:    0;
+  --ch-space-1:    0.25rem;
+  --ch-space-2:    0.5rem;
+  --ch-space-3:    0.75rem;
+  --ch-space-4:    1rem;
+  --ch-space-5:    1.25rem;
+  --ch-space-6:    1.5rem;
+  --ch-space-8:    2rem;
+  --ch-space-10:   2.5rem;
+  --ch-space-12:   3rem;
+  --ch-space-16:   4rem;
+  --ch-space-20:   5rem;
+
+  /* ── Typography ─────────────────────────────────────────────── */
+  --ch-text-xs:   0.75rem;
+  --ch-text-sm:   0.875rem;
+  --ch-text-md:   1rem;
+  --ch-text-lg:   1.125rem;
+  --ch-text-xl:   1.25rem;
+  --ch-text-2xl:  1.5rem;
+  --ch-text-3xl:  1.875rem;
+  --ch-text-4xl:  2.25rem;
+
+  --ch-leading-tight:  1.25;
+  --ch-leading-normal: 1.5;
+  --ch-leading-loose:  2;
+
+  --ch-weight-normal:  400;
+  --ch-weight-medium:  500;
+  --ch-weight-semibold:600;
+  --ch-weight-bold:    700;
+
+  /* ── Transitions ────────────────────────────────────────────── */
+  --ch-duration-fast:   150ms;
+  --ch-duration-base:   200ms;
+  --ch-duration-slow:   300ms;
+  --ch-transition:      ease;
+  --ch-transition-fast: 150ms ease;
+  --ch-transition-base: 200ms ease;
+  --ch-transition-slow: 300ms ease;
+
+  /* ── Z-index ────────────────────────────────────────────────── */
+  --ch-z-dropdown: 1000;
+  --ch-z-sticky:   1020;
+  --ch-z-fixed:    1030;
+  --ch-z-backdrop: 1040;
+  --ch-z-modal:    1050;
+  --ch-z-popover:  1060;
+  --ch-z-tooltip:  1070;
+  --ch-z-toast:    1080;
+
+  /* ── Component: Button ──────────────────────────────────────── */
+  --ch-btn-height-sm:   2.25rem;
+  --ch-btn-height-md:   2.5rem;
+  --ch-btn-height-lg:   2.75rem;
+  --ch-btn-px-sm:       0.75rem;
+  --ch-btn-px-md:       1rem;
+  --ch-btn-px-lg:       1.25rem;
+  --ch-btn-radius:      var(--ch-radius-md);
+  --ch-btn-font-weight: var(--ch-weight-medium);
+
+  /* ── Component: Input ───────────────────────────────────────── */
+  --ch-input-height-sm:    2.25rem;
+  --ch-input-height-md:    2.5rem;
+  --ch-input-height-lg:    2.75rem;
+  --ch-input-px:           0.75rem;
+  --ch-input-border:       var(--ch-border);
+  --ch-input-border-focus: var(--ch-border-focus);
+  --ch-input-bg:           var(--ch-bg);
+  --ch-input-radius:       var(--ch-radius-md);
+  --ch-input-ring:         0 0 0 2px hsl(222.2 47.4% 11.2% / 0.3);
+
+  /* ── Component: Card ────────────────────────────────────────── */
+  --ch-card-bg:      var(--ch-bg);
+  --ch-card-border:  var(--ch-border);
+  --ch-card-radius:  var(--ch-radius-lg);
+  --ch-card-shadow:  var(--ch-shadow-sm);
+  --ch-card-padding: var(--ch-space-6);
+
+  /* ── Component: Badge ───────────────────────────────────────── */
+  --ch-badge-radius:      var(--ch-radius-full);
+  --ch-badge-font-size:   0.75rem;
+  --ch-badge-font-weight: var(--ch-weight-semibold);
+  --ch-badge-px:          0.625rem;
+  --ch-badge-py:          0.125rem;
+}
+
+/* ── Dark Mode ─────────────────────────────────────────────────── */
+.ch-theme-shadcn.dark,
+[data-ch-theme='shadcn'][data-ch-color-mode='dark'] {
+  --ch-bg:             hsl(222.2 84% 4.9%);
+  --ch-bg-subtle:      hsl(217.2 32.6% 17.5%);
+  --ch-bg-elevated:    hsl(222.2 84% 4.9%);
+  --ch-text:           hsl(210 40% 98%);
+  --ch-text-subtle:    hsl(215 20.2% 65.1%);
+  --ch-text-muted:     hsl(215 20.2% 55.1%);
+  --ch-border:         hsl(217.2 32.6% 17.5%);
+  --ch-border-strong:  hsl(217.2 32.6% 27.5%);
+  --ch-border-focus:   hsl(210 40% 98%);
+  --ch-primary:        hsl(210 40% 98%);
+  --ch-primary-hover:  hsl(210 40% 90%);
+  --ch-primary-fg:     hsl(222.2 47.4% 11.2%);
+  --ch-input-bg:       hsl(222.2 84% 4.9%);
+  --ch-card-bg:        hsl(222.2 84% 4.9%);
+  --ch-card-border:    hsl(217.2 32.6% 17.5%);
+}

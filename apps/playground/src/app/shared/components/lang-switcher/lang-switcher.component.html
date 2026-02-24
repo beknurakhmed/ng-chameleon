@@ -1,0 +1,14 @@
+<div class="lang-switcher">
+  <button
+    *ngFor="let l of langs"
+    type="button"
+    class="lang-switcher__btn"
+    [class.lang-switcher__btn--active]="svc.lang() === l.code"
+    [attr.aria-pressed]="svc.lang() === l.code"
+    [attr.aria-label]="'lang.' + l.code | translate"
+    (click)="setLang(l.code)"
+  >
+    <span class="lang-switcher__flag" aria-hidden="true">{{ l.flag }}</span>
+    <span class="lang-switcher__code">{{ l.code.toUpperCase() }}</span>
+  </button>
+</div>

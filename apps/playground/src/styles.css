@@ -1,0 +1,29 @@
+/* Import ng-chameleon theme — change to switch design system */
+@import 'ng-chameleon/themes/shadcn.css';
+@import 'ng-chameleon/themes/base.css';
+
+/* Tailwind base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global app styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: var(--ch-font-body);
+  background-color: var(--ch-bg);
+  color: var(--ch-text);
+  line-height: var(--ch-leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Transition color scheme changes */
+body {
+  transition: background-color var(--ch-transition-slow), color var(--ch-transition-slow);
+}

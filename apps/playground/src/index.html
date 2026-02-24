@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ng-chameleon Playground</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦎</text></svg>">
+
+  <!-- Fonts: loaded lazily per theme via ThemeService -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Inter (Chakra, Shadcn) + Roboto (Material) loaded upfront for fast theme switching -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* Block flash of unstyled content */
+    html { visibility: hidden; }
+    html.ch-ready { visibility: visible; }
+  </style>
+</head>
+<body>
+  <app-root></app-root>
+
+  <script>
+    // Apply saved theme before Angular bootstraps → prevents flash
+    (function() {
+      const theme = localStorage.getItem('ch-theme') || 'shadcn';
+      const mode  = localStorage.getItem('ch-color-mode') || 'system';
+      const resolvedMode = mode === 'system'
+        ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        : mode;
+      document.body.classList.add('ch-theme-' + theme);
+      document.body.setAttribute('data-ch-theme', theme);
+      document.body.setAttribute('data-ch-color-mode', resolvedMode);
+      if (resolvedMode === 'dark') document.body.classList.add('dark');
+      document.documentElement.classList.add('ch-ready');
+    })();
+  </script>
+</body>
+</html>

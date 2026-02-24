@@ -1,0 +1,150 @@
+/* ng-chameleon — Ant Design 5 Theme
+   Exact values from antd 5.x design tokens.
+   https://ant.design/docs/react/customize-theme
+   Apply: <body class="ch-theme-antd"> or ThemeService.setTheme('antd')
+*/
+@import './base.css';
+
+.ch-theme-antd,
+[data-ch-theme='antd'] {
+  /* Ant Design uses -apple-system as primary font */
+  --ch-font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --ch-font-heading: var(--ch-font-body);
+  --ch-font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+
+  /* antd 5.x colorPrimary: '#1677ff' — seed color blue-6 */
+  --ch-primary-50:  #e6f4ff;  /* blue-1 */
+  --ch-primary-100: #bae0ff;  /* blue-2 */
+  --ch-primary-200: #91caff;  /* blue-3 */
+  --ch-primary-300: #69b1ff;  /* blue-4 */
+  --ch-primary-400: #4096ff;  /* blue-5 */
+  --ch-primary-500: #1677ff;  /* blue-6 (colorPrimary) */
+  --ch-primary-600: #0958d9;  /* blue-7 */
+  --ch-primary-700: #003eb3;  /* blue-8 */
+  --ch-primary-800: #002c8c;  /* blue-9 */
+  --ch-primary-900: #001d66;  /* blue-10 */
+
+  --ch-primary:        #1677ff;
+  --ch-primary-hover:  #4096ff;  /* antd hover = lighter */
+  --ch-primary-subtle: #e6f4ff;
+  --ch-primary-fg:     #ffffff;
+
+  --ch-secondary:        #8c8c8c;  /* colorTextQuaternary */
+  --ch-secondary-hover:  #595959;
+  --ch-secondary-subtle: #fafafa;
+
+  /* antd 5.x exact semantic colors */
+  --ch-success:        #52c41a;  /* colorSuccess */
+  --ch-success-hover:  #389e0d;
+  --ch-success-subtle: #f6ffed;  /* green-1 */
+  --ch-success-fg:     #ffffff;
+
+  --ch-warning:        #faad14;  /* colorWarning */
+  --ch-warning-hover:  #d48806;
+  --ch-warning-subtle: #fffbe6;  /* gold-1 */
+  --ch-warning-fg:     #ffffff;
+
+  --ch-error:          #ff4d4f;  /* colorError */
+  --ch-error-hover:    #cf1322;
+  --ch-error-subtle:   #fff2f0;  /* red-1 */
+  --ch-error-fg:       #ffffff;
+
+  --ch-info:           #1677ff;  /* colorInfo = colorPrimary */
+  --ch-info-hover:     #4096ff;
+  --ch-info-subtle:    #e6f4ff;
+  --ch-info-fg:        #ffffff;
+
+  /* antd colorBgBase / colorBgContainer */
+  --ch-bg:           #ffffff;   /* colorBgContainer */
+  --ch-bg-subtle:    #fafafa;   /* colorFillQuaternary */
+  --ch-bg-elevated:  #ffffff;
+  --ch-bg-overlay:   rgba(0,0,0,0.45);
+
+  /* antd colorText hierarchy */
+  --ch-text:          rgba(0,0,0,0.88);  /* colorText */
+  --ch-text-subtle:   rgba(0,0,0,0.65);  /* colorTextSecondary */
+  --ch-text-muted:    rgba(0,0,0,0.45);  /* colorTextTertiary */
+  --ch-text-disabled: rgba(0,0,0,0.25);  /* colorTextDisabled */
+  --ch-text-inverse:  #ffffff;
+
+  /* antd colorBorder / colorBorderSecondary */
+  --ch-border:        #d9d9d9;  /* colorBorder */
+  --ch-border-strong: #bfbfbf;  /* colorBorderSecondary */
+  --ch-border-focus:  var(--ch-primary);
+
+  /* antd borderRadius: 6, borderRadiusSM: 4, borderRadiusLG: 8, borderRadiusXS: 2 */
+  --ch-radius-none: 0;
+  --ch-radius-sm:   2px;   /* borderRadiusXS */
+  --ch-radius-md:   6px;   /* borderRadius (default) */
+  --ch-radius-lg:   8px;   /* borderRadiusLG */
+  --ch-radius-xl:   12px;  /* borderRadiusOuter */
+  --ch-radius-2xl:  16px;
+  --ch-radius-full: 9999px;
+
+  /* antd boxShadow tokens */
+  --ch-shadow-xs: 0 1px 2px 0 rgba(0,0,0,.03),0 1px 6px -1px rgba(0,0,0,.02),0 2px 4px 0 rgba(0,0,0,.02);
+  --ch-shadow-sm: 0 2px 8px rgba(0,0,0,.15);
+  --ch-shadow-md: 0 6px 16px 0 rgba(0,0,0,.08),0 3px 6px -4px rgba(0,0,0,.12),0 9px 28px 8px rgba(0,0,0,.05);
+  --ch-shadow-lg: 0 1px 2px -2px rgba(0,0,0,.16),0 3px 6px 0 rgba(0,0,0,.12),0 5px 12px 4px rgba(0,0,0,.09);
+  --ch-shadow-xl: 0 8px 24px rgba(0,0,0,.12),0 16px 32px rgba(0,0,0,.08);
+
+  /* antd uses 4px base grid */
+  --ch-space-0:0; --ch-space-1:4px; --ch-space-2:8px; --ch-space-3:12px;
+  --ch-space-4:16px; --ch-space-5:20px; --ch-space-6:24px; --ch-space-8:32px;
+  --ch-space-10:40px; --ch-space-12:48px; --ch-space-16:64px; --ch-space-20:80px;
+
+  /* antd fontSizeSM:12 fontSizeBase:14 fontSizeLG:16 fontSizeXL:20 */
+  --ch-text-xs:12px; --ch-text-sm:14px; --ch-text-md:14px;
+  --ch-text-lg:16px; --ch-text-xl:20px; --ch-text-2xl:24px;
+  --ch-text-3xl:30px; --ch-text-4xl:38px;
+  --ch-leading-tight:1.3; --ch-leading-normal:1.5714; --ch-leading-loose:1.75;
+  --ch-weight-normal:400; --ch-weight-medium:500; --ch-weight-semibold:600; --ch-weight-bold:700;
+
+  /* antd motion: easeInOut cubic-bezier(0.645,0.045,0.355,1) */
+  --ch-duration-fast:100ms; --ch-duration-base:200ms; --ch-duration-slow:300ms;
+  --ch-transition: cubic-bezier(0.645,0.045,0.355,1);
+  --ch-transition-fast: 100ms cubic-bezier(0.645,0.045,0.355,1);
+  --ch-transition-base: 200ms cubic-bezier(0.645,0.045,0.355,1);
+  --ch-transition-slow: 300ms cubic-bezier(0.645,0.045,0.355,1);
+
+  --ch-z-dropdown:1050; --ch-z-sticky:1020; --ch-z-fixed:1030;
+  --ch-z-backdrop:1040; --ch-z-modal:1000; --ch-z-popover:1060;
+  --ch-z-tooltip:1070; --ch-z-toast:1010;
+
+  /* antd Button: height SM:24 MD:32 LG:40, padding: 7px/15px/15px */
+  --ch-btn-height-sm:24px; --ch-btn-height-md:32px; --ch-btn-height-lg:40px;
+  --ch-btn-px-sm:7px; --ch-btn-px-md:15px; --ch-btn-px-lg:15px;
+  --ch-btn-radius: var(--ch-radius-md);  /* 6px */
+  --ch-btn-font-weight: var(--ch-weight-normal);
+
+  /* antd Input: height SM:24 MD:32 LG:40, padding: 0 11px */
+  --ch-input-height-sm:24px; --ch-input-height-md:32px; --ch-input-height-lg:40px;
+  --ch-input-px:11px;
+  --ch-input-border: var(--ch-border);
+  --ch-input-border-focus: var(--ch-primary);
+  --ch-input-bg: var(--ch-bg);
+  --ch-input-radius: var(--ch-radius-md);  /* 6px */
+  --ch-input-ring: 0 0 0 2px rgba(22,119,255,.2);
+
+  /* antd Card: border 1px, radius 8px */
+  --ch-card-bg:      var(--ch-bg);
+  --ch-card-border:  var(--ch-border);
+  --ch-card-radius:  var(--ch-radius-lg);  /* 8px */
+  --ch-card-shadow:  none;
+  --ch-card-padding: var(--ch-space-6);  /* 24px */
+
+  --ch-badge-radius: var(--ch-radius-full);
+  --ch-badge-font-size:12px; --ch-badge-font-weight: var(--ch-weight-normal);
+  --ch-badge-px:8px; --ch-badge-py:0;
+}
+
+.ch-theme-antd.dark,
+[data-ch-theme='antd'][data-ch-color-mode='dark'] {
+  --ch-bg:#141414; --ch-bg-subtle:#1f1f1f; --ch-bg-elevated:#262626;
+  --ch-text:rgba(255,255,255,.85); --ch-text-subtle:rgba(255,255,255,.65);
+  --ch-text-muted:rgba(255,255,255,.45); --ch-text-disabled:rgba(255,255,255,.25);
+  --ch-border:#424242; --ch-border-strong:#595959;
+  --ch-primary-hover:#4096ff;
+  --ch-input-bg:#1f1f1f; --ch-card-bg:#1f1f1f;
+}

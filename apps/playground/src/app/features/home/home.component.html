@@ -1,0 +1,123 @@
+<div class="pg-page home">
+
+  <!-- Hero -->
+  <section class="home__hero">
+    <div class="home__hero-content">
+      <div class="home__hero-badge">
+        <ch-badge colorScheme="primary" variant="subtle">
+          v0.1 — Developer Preview
+        </ch-badge>
+      </div>
+
+      <h1 class="home__hero-title">
+        🦎 ng-chameleon
+      </h1>
+      <p class="home__hero-subtitle">
+        {{ 'home.hero.title' | translate }}
+        <strong>{{ 'home.hero.subtitle' | translate }}</strong>
+      </p>
+      <p class="home__hero-desc">
+        {{ 'home.hero.tagline' | translate }}
+      </p>
+
+      <div class="home__hero-actions">
+        <ch-button size="lg" routerLink="/components">
+          {{ 'home.hero.cta' | translate }} →
+        </ch-button>
+        <ch-button size="lg" variant="outline" routerLink="/themes">
+          {{ 'home.hero.themes' | translate }}
+        </ch-button>
+      </div>
+
+      <!-- Live theme preview -->
+      <div class="home__hero-preview">
+        <div class="home__preview-label">
+          <span>{{ 'themes.active' | translate }}:</span>
+          <strong>{{ themeService.getCurrentThemeMeta()?.label }}</strong>
+        </div>
+        <div class="home__preview-buttons">
+          <ch-button size="sm" variant="solid" colorScheme="primary">Primary</ch-button>
+          <ch-button size="sm" variant="outline" colorScheme="success">Success</ch-button>
+          <ch-button size="sm" variant="ghost" colorScheme="error">Error</ch-button>
+          <ch-badge colorScheme="warning">Warning</ch-badge>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="home__features pg-section">
+    <h2 class="pg-section__title">{{ 'home.features.title' | translate }}</h2>
+    <div class="home__features-grid">
+      <div *ngFor="let f of features" class="home__feature-card">
+        <ch-card>
+          <ch-card-body>
+            <span class="home__feature-icon" aria-hidden="true">{{ f.icon }}</span>
+            <p class="home__feature-title">{{ f.titleKey | translate }}</p>
+            <p class="home__feature-desc">{{ f.descKey | translate }}</p>
+          </ch-card-body>
+        </ch-card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick start -->
+  <section class="home__quickstart pg-section">
+    <h2 class="pg-section__title">{{ 'home.install.title' | translate }}</h2>
+    <div class="home__quickstart-grid">
+      <div class="home__quickstart-code">
+        <pre class="pg-code">{{ installCode }}</pre>
+      </div>
+      <div class="home__quickstart-info">
+        <ch-alert status="info" variant="subtle" title="Copy-paste approach">
+          Components are copied into your project — you own the code.
+          Customize anything freely.
+        </ch-alert>
+
+        <div class="home__quickstart-compare" chStack spacing="3">
+          <p chText fontWeight="semibold">vs alternatives:</p>
+
+          <div chFlex gap="3" align="center">
+            <ch-badge colorScheme="error" variant="subtle">Spartan</ch-badge>
+            <span chText fontSize="sm" color="gray.500">shadcn only, requires Nx</span>
+          </div>
+          <div chFlex gap="3" align="center">
+            <ch-badge colorScheme="error" variant="subtle">Angular Material</ch-badge>
+            <span chText fontSize="sm" color="gray.500">Material only, hard to customize</span>
+          </div>
+          <div chFlex gap="3" align="center">
+            <ch-badge colorScheme="success" variant="subtle">ng-chameleon</ch-badge>
+            <span chText fontSize="sm" color="gray.500">4 themes, style props, zero-cost switch</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Author -->
+  <section class="home__author pg-section">
+    <ch-card>
+      <ch-card-body>
+        <div class="home__author-inner" chFlex gap="5" align="center">
+          <img
+            class="home__author-avatar"
+            [src]="author.avatar"
+            [alt]="author.name"
+            width="72" height="72">
+          <div class="home__author-info">
+            <p chText fontWeight="bold" fontSize="lg">{{ author.name }}</p>
+            <p chText fontSize="sm" color="gray.500">{{ author.bio }}</p>
+            <p chText fontSize="sm" color="gray.400">📍 {{ author.location }}</p>
+            <div chFlex gap="3" style="margin-top:0.5rem">
+              <a [href]="author.github" target="_blank" rel="noopener"
+                chText fontSize="sm" color="primary">GitHub</a>
+              <a [href]="author.linkedin" target="_blank" rel="noopener"
+                chText fontSize="sm" color="primary">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </ch-card-body>
+    </ch-card>
+  </section>
+
+</div>

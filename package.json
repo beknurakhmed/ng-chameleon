@@ -1,0 +1,62 @@
+{
+  "name": "ng-chameleon-workspace",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/beknurakhmed/ng-chameleon.git"
+  },
+  "homepage": "https://chameleon.beknurdev.uz",
+  "bugs": {
+    "url": "https://github.com/beknurakhmed/ng-chameleon/issues"
+  },
+  "scripts": {
+    "build:lib":        "ng build ng-chameleon --configuration production",
+    "build:lib:watch":  "ng build ng-chameleon --watch",
+    "build:schematics": "tsc -p packages/schematics/tsconfig.json",
+    "build":            "npm run build:lib && npm run build:schematics",
+    "start":            "ng serve playground --configuration development",
+    "playground":       "ng serve playground --configuration development --open",
+    "test":             "ng test ng-chameleon",
+    "lint":             "ng lint"
+  },
+  "dependencies": {
+    "@angular/animations":               "^17.3.0",
+    "@angular/cdk":                      "^17.3.0",
+    "@angular/common":                   "^17.3.0",
+    "@angular/compiler":                 "^17.3.0",
+    "@angular/core":                     "^17.3.0",
+    "@angular/forms":                    "^17.3.0",
+    "@angular/platform-browser":         "^17.3.0",
+    "@angular/platform-browser-dynamic": "^17.3.0",
+    "@angular/router":                   "^17.3.0",
+    "rxjs":                              "~7.8.0",
+    "tslib":                             "^2.6.0",
+    "zone.js":                           "~0.14.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular":     "^17.3.0",
+    "@angular-devkit/core":              "^17.3.0",
+    "@angular-devkit/schematics":        "^17.3.0",
+    "@angular-eslint/builder":           "^17.0.0",
+    "@angular-eslint/eslint-plugin":     "^17.0.0",
+    "@angular/cli":                      "^17.3.0",
+    "@angular/compiler-cli":             "^17.3.0",
+    "@typescript-eslint/eslint-plugin":  "^7.0.0",
+    "@typescript-eslint/parser":         "^7.0.0",
+    "autoprefixer":                      "^10.4.0",
+    "eslint":                            "^8.57.0",
+    "jasmine-core":                      "~5.1.0",
+    "karma":                             "~6.4.0",
+    "karma-chrome-launcher":             "~3.2.0",
+    "karma-coverage":                    "~2.2.0",
+    "karma-jasmine":                     "~5.1.0",
+    "karma-jasmine-html-reporter":       "~2.1.0",
+    "ng-packagr":                        "^17.3.0",
+    "postcss":                           "^8.4.0",
+    "prettier":                          "^3.2.0",
+    "tailwindcss":                       "^3.4.0",
+    "typescript":                        "~5.4.0"
+  }
+}

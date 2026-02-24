@@ -1,0 +1,20 @@
+{
+  "$schema": "../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "ng-add": {
+      "description": "Install and configure ng-chameleon in an Angular project",
+      "factory": "./src/ng-add/index#ngAdd",
+      "schema": "./src/ng-add/schema.json"
+    },
+    "add": {
+      "description": "Add a ng-chameleon component to your project (shadcn-style copy-paste)",
+      "factory": "./src/add-component/index#addComponent",
+      "schema": "./src/add-component/schema.json"
+    },
+    "set-theme": {
+      "description": "Switch the active theme for all ng-chameleon components",
+      "factory": "./src/set-theme/index#setTheme",
+      "schema": "./src/set-theme/schema.json"
+    }
+  }
+}

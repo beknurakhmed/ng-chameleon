@@ -1,0 +1,29 @@
+<div class="theme-switcher">
+  <!-- Theme buttons -->
+  <div class="theme-switcher__themes">
+    <button
+      *ngFor="let t of themes"
+      class="theme-btn"
+      [class.theme-btn--active]="themeService.theme() === t.value"
+      [attr.aria-pressed]="themeService.theme() === t.value"
+      [attr.aria-label]="'Switch to ' + t.label"
+      [title]="t.label + ' — ' + t.description"
+      type="button"
+      (click)="setTheme(t.value)">
+      <span class="theme-btn__swatch"
+        [style.background]="t.primaryColor"></span>
+      <span class="theme-btn__label">{{ t.label }}</span>
+    </button>
+  </div>
+
+  <!-- Dark mode toggle -->
+  <button
+    class="dark-toggle"
+    type="button"
+    [attr.aria-label]="themeService.isDark() ? 'Switch to light mode' : 'Switch to dark mode'"
+    [title]="themeService.isDark() ? 'Light mode' : 'Dark mode'"
+    (click)="toggleDark()">
+    <span *ngIf="themeService.isDark()">☀️</span>
+    <span *ngIf="!themeService.isDark()">🌙</span>
+  </button>
+</div>

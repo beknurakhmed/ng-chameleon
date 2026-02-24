@@ -1,0 +1,98 @@
+/* ng-chameleon — Material Design 3 Theme
+   Exact values from @angular/material 17 M3 spec.
+   Apply: <body class="ch-theme-material"> or ThemeService.setTheme('material')
+*/
+@import './base.css';
+
+.ch-theme-material,
+[data-ch-theme='material'] {
+  --ch-font-body:    'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  --ch-font-heading: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  --ch-font-mono:    'Roboto Mono', 'Courier New', monospace;
+  --ch-primary-50:   #f3e5f5; --ch-primary-100: #e1bee7; --ch-primary-200: #ce93d8;
+  --ch-primary-300:  #ba68c8; --ch-primary-400: #ab47bc; --ch-primary-500: #9c27b0;
+  --ch-primary-600:  #8e24aa; --ch-primary-700: #7b1fa2; --ch-primary-800: #6a1b9a;
+  --ch-primary-900:  #4a148c;
+  --ch-primary:        #6750A4;
+  --ch-primary-hover:  #7965AF;
+  --ch-primary-subtle: #EADDFF;
+  --ch-primary-fg:     #FFFFFF;
+  --ch-secondary:        #625B71;
+  --ch-secondary-hover:  #7A7289;
+  --ch-secondary-subtle: #E8DEF8;
+  --ch-success:        #386A20; --ch-success-hover: #255012;
+  --ch-success-subtle: #C3F0A2; --ch-success-fg: #FFFFFF;
+  --ch-warning:        #765A00; --ch-warning-hover: #5B4400;
+  --ch-warning-subtle: #FFDF99; --ch-warning-fg: #FFFFFF;
+  --ch-error:          #B3261E; --ch-error-hover:  #8C1D18;
+  --ch-error-subtle:   #F9DEDC; --ch-error-fg:    #FFFFFF;
+  --ch-info:           #006781; --ch-info-hover:   #004D61;
+  --ch-info-subtle:    #B8EAFF; --ch-info-fg:     #FFFFFF;
+  --ch-bg:             #FFFBFE;
+  --ch-bg-subtle:      #F4EFF4;
+  --ch-bg-elevated:    #FFFBFE;
+  --ch-bg-overlay:     rgba(0,0,0,0.5);
+  --ch-text:           #1C1B1F;
+  --ch-text-subtle:    #49454F;
+  --ch-text-muted:     #79747E;
+  --ch-text-disabled:  rgba(28,27,31,0.38);
+  --ch-text-inverse:   #FFFFFF;
+  --ch-border:         #CAC4D0;
+  --ch-border-strong:  #79747E;
+  --ch-border-focus:   var(--ch-primary);
+  --ch-radius-none: 0;     --ch-radius-sm:   4px;
+  --ch-radius-md:   12px;  --ch-radius-lg:   16px;
+  --ch-radius-xl:   28px;  --ch-radius-2xl:  28px;  --ch-radius-full: 9999px;
+  --ch-shadow-xs: none;
+  --ch-shadow-sm: 0px 1px 2px rgba(0,0,0,.3), 0px 1px 3px 1px rgba(0,0,0,.15);
+  --ch-shadow-md: 0px 1px 2px rgba(0,0,0,.3), 0px 2px 6px 2px rgba(0,0,0,.15);
+  --ch-shadow-lg: 0px 4px 8px 3px rgba(0,0,0,.15), 0px 1px 3px rgba(0,0,0,.3);
+  --ch-shadow-xl: 0px 6px 10px 4px rgba(0,0,0,.15), 0px 2px 3px rgba(0,0,0,.3);
+  --ch-space-0:0; --ch-space-1:4px; --ch-space-2:8px; --ch-space-3:12px;
+  --ch-space-4:16px; --ch-space-5:20px; --ch-space-6:24px; --ch-space-8:32px;
+  --ch-space-10:40px; --ch-space-12:48px; --ch-space-16:64px; --ch-space-20:80px;
+  --ch-text-xs:.75rem; --ch-text-sm:.875rem; --ch-text-md:1rem;
+  --ch-text-lg:1.125rem; --ch-text-xl:1.375rem; --ch-text-2xl:1.5rem;
+  --ch-text-3xl:2rem; --ch-text-4xl:2.8125rem;
+  --ch-leading-tight:1.2; --ch-leading-normal:1.5; --ch-leading-loose:1.75;
+  --ch-weight-normal:400; --ch-weight-medium:500; --ch-weight-semibold:600; --ch-weight-bold:700;
+  --ch-duration-fast:200ms; --ch-duration-base:300ms; --ch-duration-slow:500ms;
+  --ch-transition: cubic-bezier(0.2,0,0,1);
+  --ch-transition-fast: 200ms cubic-bezier(0.2,0,0,1);
+  --ch-transition-base: 300ms cubic-bezier(0.2,0,0,1);
+  --ch-transition-slow: 500ms cubic-bezier(0.2,0,0,1);
+  --ch-z-dropdown:1000; --ch-z-sticky:1020; --ch-z-fixed:1030;
+  --ch-z-backdrop:1040; --ch-z-modal:1050; --ch-z-popover:1060;
+  --ch-z-tooltip:1070; --ch-z-toast:1080;
+  --ch-btn-height-sm:32px; --ch-btn-height-md:40px; --ch-btn-height-lg:48px;
+  --ch-btn-px-sm:12px; --ch-btn-px-md:24px; --ch-btn-px-lg:32px;
+  --ch-btn-radius: var(--ch-radius-full);
+  --ch-btn-font-weight: var(--ch-weight-medium);
+  --ch-input-height-sm:40px; --ch-input-height-md:56px; --ch-input-height-lg:64px;
+  --ch-input-px:16px;
+  --ch-input-border: var(--ch-border-strong);
+  --ch-input-border-focus: var(--ch-primary);
+  --ch-input-bg: transparent;
+  --ch-input-radius: 4px;
+  --ch-input-ring: none;
+  --ch-card-bg:      var(--ch-bg-subtle);
+  --ch-card-border:  transparent;
+  --ch-card-radius:  16px;
+  --ch-card-shadow:  none;
+  --ch-card-padding: var(--ch-space-4);
+  --ch-badge-radius: var(--ch-radius-full);
+  --ch-badge-font-size: .6875rem;
+  --ch-badge-font-weight: var(--ch-weight-medium);
+  --ch-badge-px:6px; --ch-badge-py:2px;
+}
+
+.ch-theme-material.dark,
+[data-ch-theme='material'][data-ch-color-mode='dark'] {
+  --ch-primary:#D0BCFF; --ch-primary-hover:#E8DEF8;
+  --ch-primary-subtle:#4F378B; --ch-primary-fg:#381E72;
+  --ch-bg:#1C1B1F; --ch-bg-subtle:#49454F; --ch-bg-elevated:#2B2930;
+  --ch-text:#E6E1E5; --ch-text-subtle:#CAC4D0; --ch-text-muted:#938F99;
+  --ch-border:#49454F; --ch-border-strong:#938F99;
+  --ch-error:#F2B8B5; --ch-error-subtle:#8C1D18;
+  --ch-card-bg:#2B2930;
+}

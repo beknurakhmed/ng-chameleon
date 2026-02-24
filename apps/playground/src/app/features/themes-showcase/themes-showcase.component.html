@@ -1,0 +1,153 @@
+<div class="pg-page themes">
+
+  <!-- Page header -->
+  <div class="themes__header">
+    <h1 class="themes__title">Theme Gallery</h1>
+    <p class="themes__subtitle">
+      Four production-ready design systems. Switch instantly — no rebuild, no page reload.
+    </p>
+  </div>
+
+  <!-- Theme cards grid -->
+  <div class="themes__grid">
+    <div
+      *ngFor="let td of themeDemos"
+      class="theme-card"
+      [class.theme-card--active]="isActive(td.theme)"
+      (click)="selectTheme(td.theme)">
+
+      <!-- Card header with color swatch -->
+      <div class="theme-card__header" [style.background]="td.meta.primaryColor">
+        <div class="theme-card__preview">
+          <!-- Mini UI preview -->
+          <div class="mini-preview">
+            <div class="mini-preview__btn"></div>
+            <div class="mini-preview__btn mini-preview__btn--outline"></div>
+            <div class="mini-preview__input"></div>
+          </div>
+        </div>
+
+        <div *ngIf="isActive(td.theme)" class="theme-card__badge">
+          <svg viewBox="0 0 16 16" fill="none">
+            <path d="M3 8l4 4 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Active
+        </div>
+      </div>
+
+      <!-- Card info -->
+      <div class="theme-card__body">
+        <div class="theme-card__name-row">
+          <h3 class="theme-card__name">{{ td.meta.label }}</h3>
+          <ch-badge colorScheme="primary" variant="subtle">
+            {{ td.meta.style }}
+          </ch-badge>
+        </div>
+
+        <p class="theme-card__desc">{{ td.meta.description }}</p>
+
+        <div class="theme-card__meta">
+          <span class="theme-card__font">
+            <strong>Font:</strong> {{ td.meta.font }}
+          </span>
+          <a *ngIf="td.meta.origin" [href]="td.meta.origin" target="_blank" rel="noopener"
+            class="theme-card__origin" (click)="$event.stopPropagation()">
+            Source ↗
+          </a>
+        </div>
+
+        <ch-button
+          [variant]="isActive(td.theme) ? 'solid' : 'outline'"
+          [colorScheme]="isActive(td.theme) ? 'primary' : 'gray'"
+          size="sm"
+          (clicked)="selectTheme(td.theme)">
+          {{ isActive(td.theme) ? '✓ Active' : 'Apply Theme' }}
+        </ch-button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison section -->
+  <section class="themes__section pg-section">
+    <h2 class="pg-section__title">Same components. Different design systems.</h2>
+    <p class="themes__section-sub">
+      Switch the active theme above — all components below update instantly.
+    </p>
+
+    <ch-card>
+      <ch-card-header>Components preview (current theme: {{ activeTheme }})</ch-card-header>
+      <ch-card-body>
+
+        <!-- Buttons -->
+        <div class="demo-group">
+          <p class="demo-group__label">Buttons</p>
+          <div class="demo-row">
+            <ch-button variant="solid" colorScheme="primary">Primary</ch-button>
+            <ch-button variant="outline" colorScheme="primary">Outline</ch-button>
+            <ch-button variant="ghost" colorScheme="primary">Ghost</ch-button>
+            <ch-button variant="solid" colorScheme="success">Success</ch-button>
+            <ch-button variant="solid" colorScheme="error">Danger</ch-button>
+          </div>
+        </div>
+
+        <ch-divider class="demo-my"></ch-divider>
+
+        <!-- Badges & Tags -->
+        <div class="demo-group">
+          <p class="demo-group__label">Badges</p>
+          <div class="demo-row">
+            <ch-badge colorScheme="primary">Primary</ch-badge>
+            <ch-badge colorScheme="success" variant="subtle">Success</ch-badge>
+            <ch-badge colorScheme="warning" variant="subtle">Warning</ch-badge>
+            <ch-badge colorScheme="error" variant="outline">Error</ch-badge>
+            <ch-badge colorScheme="info" variant="solid">Info</ch-badge>
+          </div>
+        </div>
+
+        <ch-divider class="demo-my"></ch-divider>
+
+        <!-- Alerts -->
+        <div class="demo-group">
+          <p class="demo-group__label">Alerts</p>
+          <div class="demo-stack-sm">
+            <ch-alert status="info"    title="Info"    variant="subtle">Informational notice</ch-alert>
+            <ch-alert status="success" title="Success" variant="left-accent">Operation completed!</ch-alert>
+            <ch-alert status="warning" title="Warning" variant="subtle">Check your settings</ch-alert>
+          </div>
+        </div>
+
+        <ch-divider class="demo-my"></ch-divider>
+
+        <!-- Avatars -->
+        <div class="demo-group">
+          <p class="demo-group__label">Avatars</p>
+          <div class="demo-row demo-row--align-center">
+            <ch-avatar name="Alice K" size="sm" [showBadge]="true" badgeColor="online"></ch-avatar>
+            <ch-avatar name="Bob M"   size="md"></ch-avatar>
+            <ch-avatar name="Carol N" size="lg" [showBadge]="true" badgeColor="busy"></ch-avatar>
+            <ch-avatar-group>
+              <ch-avatar name="U1" size="sm"></ch-avatar>
+              <ch-avatar name="U2" size="sm"></ch-avatar>
+              <ch-avatar name="U3" size="sm"></ch-avatar>
+            </ch-avatar-group>
+          </div>
+        </div>
+
+      </ch-card-body>
+    </ch-card>
+  </section>
+
+  <!-- Code snippet -->
+  <section class="themes__section pg-section">
+    <h2 class="pg-section__title">Zero-config runtime switching</h2>
+
+    <ch-card>
+      <ch-card-body>
+        <div class="code-block">
+          <pre><code>{{ codeSnippet }}</code></pre>
+        </div>
+      </ch-card-body>
+    </ch-card>
+  </section>
+
+</div>

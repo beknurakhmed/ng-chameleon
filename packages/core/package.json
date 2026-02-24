@@ -1,0 +1,82 @@
+{
+  "name": "ng-chameleon",
+  "version": "0.1.0",
+  "description": "One Angular library. Four design systems. React-level DX.",
+  "keywords": ["angular", "ui", "components", "design-system", "tailwind"],
+  "author": "ng-chameleon contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/beknurakhmed/ng-chameleon.git"
+  },
+  "homepage": "https://chameleon.beknurdev.uz",
+  "bugs": {
+    "url": "https://github.com/beknurakhmed/ng-chameleon/issues"
+  },
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "esm2022": "./esm2022/ng-chameleon.mjs",
+      "esm": "./esm2022/ng-chameleon.mjs",
+      "default": "./fesm2022/ng-chameleon.mjs"
+    },
+    "./button": {
+      "types": "./button/index.d.ts",
+      "esm2022": "./esm2022/button/index.mjs",
+      "default": "./fesm2022/button.mjs"
+    },
+    "./input": {
+      "types": "./input/index.d.ts",
+      "esm2022": "./esm2022/input/index.mjs",
+      "default": "./fesm2022/input.mjs"
+    },
+    "./card": {
+      "types": "./card/index.d.ts",
+      "esm2022": "./esm2022/card/index.mjs",
+      "default": "./fesm2022/card.mjs"
+    },
+    "./badge": {
+      "types": "./badge/index.d.ts",
+      "esm2022": "./esm2022/badge/index.mjs",
+      "default": "./fesm2022/badge.mjs"
+    },
+    "./alert": {
+      "types": "./alert/index.d.ts",
+      "esm2022": "./esm2022/alert/index.mjs",
+      "default": "./fesm2022/alert.mjs"
+    },
+    "./spinner": {
+      "types": "./spinner/index.d.ts",
+      "esm2022": "./esm2022/spinner/index.mjs",
+      "default": "./fesm2022/spinner.mjs"
+    },
+    "./avatar": {
+      "types": "./avatar/index.d.ts",
+      "esm2022": "./esm2022/avatar/index.mjs",
+      "default": "./fesm2022/avatar.mjs"
+    },
+    "./style-props": {
+      "types": "./style-props/index.d.ts",
+      "esm2022": "./esm2022/style-props/index.mjs",
+      "default": "./fesm2022/style-props.mjs"
+    }
+  },
+  "peerDependencies": {
+    "@angular/common": "^17.0.0 || ^18.0.0",
+    "@angular/core": "^17.0.0 || ^18.0.0",
+    "@angular/cdk": "^17.0.0 || ^18.0.0",
+    "tailwindcss": "^3.4.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "tailwind-merge": "^2.0.0"
+  },
+  "peerDependenciesMeta": {
+    "tailwindcss": { "optional": true }
+  },
+  "schematics": "./schematics/collection.json",
+  "scripts": {
+    "build": "ng-packagr -p ng-package.json",
+    "build:watch": "ng-packagr -p ng-package.json --watch",
+    "test": "jest"
+  }
+}

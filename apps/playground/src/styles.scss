@@ -1,0 +1,98 @@
+// ── ng-chameleon Playground — Global Styles ──────────────────────────────────
+// All 4 theme CSS files (base.css + shadcn/chakra/material/antd) are bundled via
+// angular.json `styles[]`. Runtime theme switching is handled by ChameleonThemeService
+// which toggles body class: .ch-theme-shadcn | .ch-theme-chakra | .ch-theme-material | .ch-theme-antd
+
+// ── Reset & Base ──────────────────────────────────────────────────────────────
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  visibility: hidden; // prevent FOUC — set to visible by inline script
+  &.ch-ready { visibility: visible; }
+}
+
+body {
+  margin: 0;
+  font-family: var(--ch-font-body);
+  font-size: var(--ch-text-md);
+  line-height: var(--ch-leading-normal);
+  color: var(--ch-text);
+  background-color: var(--ch-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition:
+    background-color var(--ch-transition-slow),
+    color var(--ch-transition-slow);
+}
+
+// ── Typography helpers ────────────────────────────────────────────────────────
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ch-font-heading);
+  font-weight: var(--ch-weight-bold);
+  line-height: var(--ch-leading-tight);
+  color: var(--ch-text);
+  margin: 0;
+}
+
+p { margin: 0; }
+a { color: var(--ch-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+code, pre {
+  font-family: var(--ch-font-mono);
+  font-size: var(--ch-text-sm);
+}
+
+// ── Layout ────────────────────────────────────────────────────────────────────
+.pg-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--ch-space-8) var(--ch-space-6);
+
+  @media (max-width: 768px) {
+    padding: var(--ch-space-4) var(--ch-space-4);
+  }
+}
+
+.pg-section {
+  margin-bottom: var(--ch-space-12);
+
+  &__title {
+    font-size: var(--ch-text-2xl);
+    font-weight: var(--ch-weight-bold);
+    margin-bottom: var(--ch-space-6);
+    color: var(--ch-text);
+  }
+
+  &__subtitle {
+    font-size: var(--ch-text-sm);
+    color: var(--ch-text-muted);
+    margin-bottom: var(--ch-space-4);
+  }
+}
+
+// ── Code preview blocks ───────────────────────────────────────────────────────
+.pg-code {
+  background: var(--ch-bg-subtle);
+  border: 1px solid var(--ch-border);
+  border-radius: var(--ch-radius-md);
+  padding: var(--ch-space-4);
+  overflow-x: auto;
+  font-family: var(--ch-font-mono);
+  font-size: var(--ch-text-sm);
+  color: var(--ch-text);
+  line-height: 1.6;
+}
+
+// ── Utility: screen-reader only ───────────────────────────────────────────────
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

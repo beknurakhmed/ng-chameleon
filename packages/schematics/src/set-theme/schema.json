@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "id": "NgChameleonSetTheme",
+  "title": "Switch ng-chameleon theme",
+  "type": "object",
+  "properties": {
+    "theme": {
+      "description": "Theme to switch to",
+      "type": "string",
+      "enum": ["chakra", "material", "antd", "shadcn"],
+      "$default": { "$source": "argv", "index": 0 },
+      "x-prompt": {
+        "message": "Which theme do you want to switch to?",
+        "type": "list",
+        "items": [
+          { "value": "shadcn",   "label": "Shadcn/ui" },
+          { "value": "chakra",   "label": "Chakra UI" },
+          { "value": "material", "label": "Material Design" },
+          { "value": "antd",     "label": "Ant Design" }
+        ]
+      }
+    }
+  },
+  "required": ["theme"]
+}

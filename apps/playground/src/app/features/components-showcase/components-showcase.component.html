@@ -1,0 +1,637 @@
+<div class="pg-page showcase">
+
+  <!-- Sticky sidebar nav -->
+  <aside class="showcase__sidebar" aria-label="Component sections">
+    <nav>
+      <p class="showcase__sidebar-title">{{ 'showcase.title' | translate }}</p>
+      <ul class="showcase__sidebar-nav">
+        <li *ngFor="let s of sections">
+          <a (click)="scrollTo(s.id)" class="showcase__sidebar-link">{{ s.key | translate }}</a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main content -->
+  <div class="showcase__content">
+
+    <!-- BUTTONS -->
+    <section id="buttons" class="pg-section">
+      <h2 class="pg-section__title">{{ 'showcase.sections.buttons' | translate }}</h2>
+
+      <ch-card>
+        <ch-card-header>Variants &amp; Color Schemes</ch-card-header>
+        <ch-card-body>
+          <div class="demo-row">
+            <ch-button variant="solid">{{ 'showcase.buttons.solid' | translate }}</ch-button>
+            <ch-button variant="outline">{{ 'showcase.buttons.outline' | translate }}</ch-button>
+            <ch-button variant="ghost">{{ 'showcase.buttons.ghost' | translate }}</ch-button>
+            <ch-button variant="link">{{ 'showcase.buttons.link' | translate }}</ch-button>
+            <ch-button variant="subtle">Subtle</ch-button>
+          </div>
+
+          <ch-divider label="Color Schemes" class="demo-divider"></ch-divider>
+
+          <div class="demo-row">
+            <ch-button colorScheme="primary">Primary</ch-button>
+            <ch-button colorScheme="success">Success</ch-button>
+            <ch-button colorScheme="warning">Warning</ch-button>
+            <ch-button colorScheme="error">Danger</ch-button>
+            <ch-button colorScheme="secondary">Secondary</ch-button>
+            <ch-button colorScheme="gray">Gray</ch-button>
+          </div>
+
+          <ch-divider [label]="'showcase.buttons.sizes' | translate" class="demo-divider"></ch-divider>
+
+          <div class="demo-row demo-row--align-center">
+            <ch-button size="xs">XS</ch-button>
+            <ch-button size="sm">Small</ch-button>
+            <ch-button size="md">Medium</ch-button>
+            <ch-button size="lg">Large</ch-button>
+          </div>
+        </ch-card-body>
+        <ch-card-footer>
+          <ch-button [loading]="loading()" colorScheme="primary" (clicked)="loading.set(!loading())">
+            {{ loading() ? ('showcase.buttons.loading' | translate) : 'Toggle Loading' }}
+          </ch-button>
+          <ch-button [disabled]="true" variant="outline">{{ 'showcase.buttons.disabled' | translate }}</ch-button>
+        </ch-card-footer>
+      </ch-card>
+    </section>
+
+    <!-- FORMS -->
+    <section id="forms" class="pg-section">
+      <h2 class="pg-section__title">{{ 'showcase.sections.forms' | translate }}</h2>
+
+      <ch-card>
+        <ch-card-header>Inputs &amp; Textarea</ch-card-header>
+        <ch-card-body>
+          <form [formGroup]="demoForm" class="demo-form">
+
+            <div class="demo-form__row">
+              <ch-input
+                formControlName="name"
+                placeholder="Your name"
+                [invalid]="demoForm.get('name')?.invalid && demoForm.get('name')?.touched"
+                errorMessage="Name is required (min 2 chars)"
+                helperText="Visible to others">
+              </ch-input>
+
+              <ch-input
+                formControlName="email"
+                type="email"
+                [placeholder]="'showcase.forms.emailPh' | translate"
+                [invalid]="demoForm.get('email')?.invalid && demoForm.get('email')?.touched"
+                [errorMessage]="'showcase.forms.emailError' | translate">
+              </ch-input>
+            </div>
+
+            <ch-textarea
+              formControlName="message"
+              [placeholder]="'showcase.forms.textareaPh' | translate"
+              [rows]="4"
+              [invalid]="demoForm.get('message')?.invalid && demoForm.get('message')?.touched"
+              errorMessage="Message is required"
+              helperText="Markdown supported"
+              [maxLength]="500">
+            </ch-textarea>
+
+            <ch-button [loading]="loading()" colorScheme="primary" (clicked)="submitForm()">
+              {{ loading() ? ('common.loading' | translate) : ('showcase.forms.submit' | translate) }}
+            </ch-button>
+          </form>
+        </ch-card-body>
+      </ch-card>
+
+      <!-- Checkbox, Radio, Switch -->
+      <ch-card class="demo-mt">
+        <ch-card-header>Checkbox · Radio · Switch</ch-card-header>
+        <ch-card-body>
+          <div class="demo-form__row">
+            <div>
+              <p class="demo-label">Checkboxes</p>
+              <div class="demo-stack">
+                <ch-checkbox [label]="'showcase.forms.checkbox' | translate"
+                  [ngModel]="checkboxValue()"
+                  (ngModelChange)="checkboxValue.set($event)">
+                </ch-checkbox>
+                <ch-checkbox label="Indeterminate" [indeterminate]="true"></ch-checkbox>
+                <ch-checkbox label="Disabled" [disabled]="true"></ch-checkbox>
+              </div>
+            </div>
+
+            <div>
+              <p class="demo-label">Radio Group</p>
+              <ch-radio-group direction="column">
+                <ch-radio value="react">React</ch-radio>
+                <ch-radio value="angular">Angular</ch-radio>
+                <ch-radio value="vue">Vue</ch-radio>
+              </ch-radio-group>
+            </div>
+          </div>
+
+          <ch-divider class="demo-my"></ch-divider>
+
+          <div class="demo-row demo-row--align-center">
+            <p class="demo-label" style="margin:0">Switches:</p>
+            <ch-switch [label]="'showcase.forms.switch' | translate" size="sm"></ch-switch>
+            <ch-switch label="Dark mode" size="md"
+              [ngModel]="switchValue()"
+              (ngModelChange)="switchValue.set($event)">
+            </ch-switch>
+            <ch-switch label="Beta (disabled)" size="lg" [disabled]="true"></ch-switch>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <!-- Select -->
+      <ch-card class="demo-mt">
+        <ch-card-header>Select</ch-card-header>
+        <ch-card-body>
+          <div class="demo-form__row">
+            <ch-select
+              [label]="'showcase.forms.selectLabel' | translate"
+              [placeholder]="'showcase.forms.selectPh' | translate"
+              [options]="frameworkOptions">
+            </ch-select>
+            <ch-select
+              label="Filled variant"
+              variant="filled"
+              placeholder="Select..."
+              [options]="frameworkOptions">
+            </ch-select>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <!-- Tags -->
+      <ch-card class="demo-mt">
+        <ch-card-header>Tags / Chips</ch-card-header>
+        <ch-card-body>
+          <div class="demo-row">
+            <ch-tag *ngFor="let tag of tags()"
+              colorScheme="primary"
+              [closable]="true"
+              [label]="tag"
+              (closed)="removeTag(tag)">
+              {{ tag }}
+            </ch-tag>
+          </div>
+        </ch-card-body>
+      </ch-card>
+    </section>
+
+    <!-- ADVANCED FORMS -->
+    <section id="advanced-forms" class="pg-section">
+      <h2 class="pg-section__title">{{ 'showcase.sections.advanced_forms' | translate }}</h2>
+
+      <!-- Slider -->
+      <ch-card>
+        <ch-card-header>{{ 'showcase.advanced.slider' | translate }} ({{ sliderValue() }})</ch-card-header>
+        <ch-card-body>
+          <div class="demo-stack">
+            <ch-slider
+              [label]="'showcase.advanced.slider' | translate"
+              [min]="0" [max]="100" [step]="1"
+              [ngModel]="sliderValue()"
+              (ngModelChange)="sliderValue.set($event)"
+              [showValue]="true"
+              suffix="%">
+            </ch-slider>
+            <ch-slider
+              label="Price range"
+              [min]="0" [max]="1000" [step]="50"
+              [ngModel]="400"
+              prefix="$"
+              [showMarks]="true"
+              [markStep]="200"
+              [showMinMax]="true"
+              size="lg">
+            </ch-slider>
+            <ch-slider
+              label="Disabled"
+              [ngModel]="30"
+              [disabled]="true">
+            </ch-slider>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <!-- Date Picker -->
+      <ch-card class="demo-mt">
+        <ch-card-header>{{ 'showcase.advanced.datePicker' | translate }}</ch-card-header>
+        <ch-card-body>
+          <div class="demo-form__row">
+            <ch-date-picker
+              label="Single date"
+              placeholder="Pick a date..."
+              [ngModel]="dateValue()"
+              (ngModelChange)="dateValue.set($event)">
+            </ch-date-picker>
+            <ch-date-picker
+              label="Date range"
+              mode="range"
+              placeholder="Select range...">
+            </ch-date-picker>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <!-- Combobox -->
+      <ch-card class="demo-mt">
+        <ch-card-header>{{ 'showcase.advanced.combobox' | translate }}</ch-card-header>
+        <ch-card-body>
+          <div class="demo-form__row">
+            <ch-combobox
+              [label]="'showcase.advanced.combobox' | translate"
+              [options]="languageOptions"
+              placeholder="Search languages..."
+              [clearable]="true"
+              [ngModel]="comboValue()"
+              (ngModelChange)="comboValue.set($event)">
+            </ch-combobox>
+            <ch-combobox
+              label="Multi-select"
+              mode="multi"
+              [options]="languageOptions"
+              placeholder="Pick multiple...">
+            </ch-combobox>
+          </div>
+        </ch-card-body>
+      </ch-card>
+    </section>
+
+    <!-- FEEDBACK -->
+    <section id="feedback" class="pg-section">
+      <h2 class="pg-section__title">{{ 'showcase.sections.feedback' | translate }}</h2>
+
+      <div class="demo-stack">
+        <ch-alert status="info"    title="Info"    variant="subtle">Informational message</ch-alert>
+        <ch-alert status="success" title="Success" variant="subtle" [dismissible]="true">{{ 'showcase.feedback.toastSuccess' | translate }}</ch-alert>
+        <ch-alert status="warning" title="Warning" variant="left-accent" [dismissible]="true">Check your input</ch-alert>
+        <ch-alert status="error"   title="Error"   variant="top-accent">Something went wrong</ch-alert>
+      </div>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Spinners</ch-card-header>
+        <ch-card-body>
+          <div class="demo-row demo-row--align-center">
+            <ch-spinner size="xs"></ch-spinner>
+            <ch-spinner size="sm"></ch-spinner>
+            <ch-spinner size="md"></ch-spinner>
+            <ch-spinner size="lg"></ch-spinner>
+            <ch-spinner size="xl"></ch-spinner>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Progress</ch-card-header>
+        <ch-card-body>
+          <div class="demo-stack">
+            <ch-progress [value]="progress()" [showValue]="true" label="Default"></ch-progress>
+            <ch-progress [value]="progress()" colorScheme="success" label="Success"></ch-progress>
+            <ch-progress [value]="progress()" colorScheme="warning" variant="striped" label="Striped"></ch-progress>
+            <ch-progress [value]="progress()" colorScheme="error" variant="animated" label="Animated" size="lg"></ch-progress>
+          </div>
+          <div class="demo-row demo-mt-sm">
+            <ch-button size="sm" (clicked)="increaseProgress()">+10%</ch-button>
+            <ch-button size="sm" variant="outline" (clicked)="resetProgress()">Reset</ch-button>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Skeleton Loading</ch-card-header>
+        <ch-card-body>
+          <div class="demo-skeleton">
+            <div class="demo-row demo-row--align-center demo-mb">
+              <ch-skeleton height="3rem" width="3rem" borderRadius="full"></ch-skeleton>
+              <div class="demo-skeleton-text">
+                <ch-skeleton height="0.875rem" width="60%"></ch-skeleton>
+                <ch-skeleton height="0.875rem" width="40%"></ch-skeleton>
+              </div>
+            </div>
+            <ch-skeleton-text [noOfLines]="3"></ch-skeleton-text>
+          </div>
+        </ch-card-body>
+      </ch-card>
+    </section>
+
+    <!-- DATA DISPLAY -->
+    <section id="data" class="pg-section">
+      <h2 class="pg-section__title">{{ 'showcase.sections.data' | translate }}</h2>
+
+      <ch-card>
+        <ch-card-header>Badges</ch-card-header>
+        <ch-card-body>
+          <div class="demo-row">
+            <ch-badge colorScheme="primary">Primary</ch-badge>
+            <ch-badge colorScheme="success">Success</ch-badge>
+            <ch-badge colorScheme="warning">Warning</ch-badge>
+            <ch-badge colorScheme="error">Error</ch-badge>
+            <ch-badge colorScheme="info">Info</ch-badge>
+            <ch-badge colorScheme="gray">Gray</ch-badge>
+          </div>
+          <div class="demo-row demo-mt-sm">
+            <ch-badge variant="solid"   colorScheme="primary">Solid</ch-badge>
+            <ch-badge variant="subtle"  colorScheme="primary">Subtle</ch-badge>
+            <ch-badge variant="outline" colorScheme="primary">Outline</ch-badge>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Avatars</ch-card-header>
+        <ch-card-body>
+          <div class="demo-row demo-row--align-center">
+            <ch-avatar name="John Doe"     size="xs"></ch-avatar>
+            <ch-avatar name="Jane Smith"   size="sm"></ch-avatar>
+            <ch-avatar name="Bob Wilson"   size="md" [showBadge]="true" badgeColor="online"></ch-avatar>
+            <ch-avatar name="Alice Cooper" size="lg" [showBadge]="true" badgeColor="busy"></ch-avatar>
+            <ch-avatar name="Mark Davis"   size="xl"></ch-avatar>
+          </div>
+          <div class="demo-mt-sm">
+            <ch-avatar-group>
+              <ch-avatar name="User A" size="sm"></ch-avatar>
+              <ch-avatar name="User B" size="sm"></ch-avatar>
+              <ch-avatar name="User C" size="sm"></ch-avatar>
+              <ch-avatar name="User D" size="sm"></ch-avatar>
+            </ch-avatar-group>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Breadcrumb</ch-card-header>
+        <ch-card-body>
+          <ch-breadcrumb [items]="breadcrumbItems"></ch-breadcrumb>
+          <ch-divider class="demo-my"></ch-divider>
+          <ch-breadcrumb [items]="breadcrumbItems" separator="/"></ch-breadcrumb>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Pagination (page: {{ currentPage() }})</ch-card-header>
+        <ch-card-body>
+          <div class="demo-stack">
+            <ch-pagination [total]="200" [pageSize]="10" [page]="currentPage()"
+              (pageChange)="currentPage.set($event)">
+            </ch-pagination>
+            <ch-pagination [total]="200" [pageSize]="10" size="sm" [page]="1">
+            </ch-pagination>
+          </div>
+        </ch-card-body>
+      </ch-card>
+    </section>
+
+    <!-- TABLE -->
+    <section id="table" class="pg-section" style="padding-top:0">
+      <h2 class="pg-section__title">{{ 'showcase.sections.table' | translate }}</h2>
+      <ch-card>
+        <ch-card-body>
+          <ch-table
+            [columns]="tableColumns"
+            [data]="tableData"
+            [striped]="true"
+            [hoverable]="true"
+            size="md">
+          </ch-table>
+        </ch-card-body>
+      </ch-card>
+    </section>
+
+    <!-- CHARTS -->
+    <section id="charts" class="pg-section">
+      <h2 class="pg-section__title">{{ 'showcase.sections.charts' | translate }}</h2>
+
+      <div class="demo-charts-grid">
+        <ch-card>
+          <ch-card-header>{{ 'showcase.charts.line' | translate }}</ch-card-header>
+          <ch-card-body>
+            <ch-chart
+              type="line"
+              [data]="lineChartData"
+              title="Revenue vs Expenses"
+              [options]="{ width: 440, height: 240, showLegend: true, showGrid: true }">
+            </ch-chart>
+          </ch-card-body>
+        </ch-card>
+
+        <ch-card>
+          <ch-card-header>{{ 'showcase.charts.bar' | translate }}</ch-card-header>
+          <ch-card-body>
+            <ch-chart
+              type="bar"
+              [data]="barChartData"
+              title="Quarterly Sales"
+              [options]="{ width: 440, height: 240, showLegend: true, showGrid: true }">
+            </ch-chart>
+          </ch-card-body>
+        </ch-card>
+
+        <ch-card>
+          <ch-card-header>{{ 'showcase.charts.area' | translate }}</ch-card-header>
+          <ch-card-body>
+            <ch-chart
+              type="area"
+              [data]="lineChartData"
+              title="Trend Overview"
+              [options]="{ width: 440, height: 240, showLegend: true }">
+            </ch-chart>
+          </ch-card-body>
+        </ch-card>
+
+        <ch-card>
+          <ch-card-header>{{ 'showcase.charts.donut' | translate }}</ch-card-header>
+          <ch-card-body>
+            <ch-chart
+              type="donut"
+              [data]="pieChartData"
+              title="Theme Usage"
+              [options]="{ width: 440, height: 240, showLegend: true, showLabels: true }">
+            </ch-chart>
+          </ch-card-body>
+        </ch-card>
+      </div>
+    </section>
+
+    <!-- NAVIGATION -->
+    <section id="navigation" class="pg-section">
+      <h2 class="pg-section__title">{{ 'showcase.sections.navigation' | translate }}</h2>
+
+      <ch-card>
+        <ch-card-header>Tabs</ch-card-header>
+        <ch-card-body>
+          <ch-tabs variant="line" [selectedIndex]="selectedTab()" (tabChange)="selectedTab.set($event)">
+            <ch-tab-panel label="Overview">
+              <p chText fontSize="sm" color="gray.500">Overview content — tab: {{ selectedTab() }}</p>
+            </ch-tab-panel>
+            <ch-tab-panel label="Settings">
+              <p chText fontSize="sm" color="gray.500">Settings panel</p>
+            </ch-tab-panel>
+            <ch-tab-panel label="Analytics">
+              <p chText fontSize="sm" color="gray.500">Analytics data goes here</p>
+            </ch-tab-panel>
+          </ch-tabs>
+
+          <ch-divider class="demo-my"></ch-divider>
+
+          <ch-tabs variant="soft-rounded">
+            <ch-tab-panel label="Daily">Daily stats</ch-tab-panel>
+            <ch-tab-panel label="Weekly">Weekly stats</ch-tab-panel>
+            <ch-tab-panel label="Monthly">Monthly stats</ch-tab-panel>
+          </ch-tabs>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Accordion</ch-card-header>
+        <ch-card-body>
+          <ch-accordion>
+            <ch-accordion-item title="What is ng-chameleon?">
+              ng-chameleon is an Angular UI library that supports four design systems through
+              a unified API using CSS custom properties.
+            </ch-accordion-item>
+            <ch-accordion-item title="How does theme switching work?">
+              Switching themes changes the active CSS class on the root — no JavaScript rebuilds required.
+            </ch-accordion-item>
+            <ch-accordion-item title="Can I customize tokens?">
+              Yes! Pass an <code>overrides</code> object to <code>provideChameleon()</code> to
+              override any design token.
+            </ch-accordion-item>
+          </ch-accordion>
+        </ch-card-body>
+      </ch-card>
+    </section>
+
+    <!-- OVERLAYS -->
+    <section id="overlay" class="pg-section">
+      <h2 class="pg-section__title">{{ 'showcase.sections.overlays' | translate }}</h2>
+
+      <ch-card>
+        <ch-card-header>Modal &amp; Drawer</ch-card-header>
+        <ch-card-body>
+          <div class="demo-row">
+            <ch-button (clicked)="modalOpen.set(true)">{{ 'showcase.feedback.modal' | translate }}</ch-button>
+            <ch-button variant="outline" (clicked)="drawerOpen.set(true)">{{ 'showcase.feedback.drawer' | translate }}</ch-button>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Menu</ch-card-header>
+        <ch-card-body>
+          <div class="demo-row">
+            <ch-menu [items]="menuItems" placement="bottom-start">
+              <ch-button chMenuTrigger variant="outline">
+                {{ 'showcase.overlays.menu' | translate }} &#9662;
+              </ch-button>
+            </ch-menu>
+            <ch-menu [items]="menuItems" trigger="hover" placement="bottom-end">
+              <ch-button chMenuTrigger variant="ghost" colorScheme="gray">
+                {{ 'showcase.overlays.tooltip' | translate }} &#9662;
+              </ch-button>
+            </ch-menu>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Tooltips</ch-card-header>
+        <ch-card-body>
+          <div class="demo-row demo-row--align-center">
+            <ch-button chTooltip="Tooltip on top"    chTooltipPlacement="top"    size="sm">Top</ch-button>
+            <ch-button chTooltip="Tooltip on right"  chTooltipPlacement="right"  size="sm">Right</ch-button>
+            <ch-button chTooltip="Tooltip on bottom" chTooltipPlacement="bottom" size="sm">Bottom</ch-button>
+            <ch-button chTooltip="Tooltip on left"   chTooltipPlacement="left"   size="sm">Left</ch-button>
+          </div>
+        </ch-card-body>
+      </ch-card>
+    </section>
+
+    <!-- LAYOUT -->
+    <section id="layout" class="pg-section">
+      <h2 class="pg-section__title">Layout</h2>
+
+      <ch-card>
+        <ch-card-header>Dividers</ch-card-header>
+        <ch-card-body>
+          <div>Content above</div>
+          <ch-divider class="demo-my"></ch-divider>
+          <div>Content between</div>
+          <ch-divider label="OR" class="demo-my"></ch-divider>
+          <div>Content below</div>
+          <ch-divider label="Section" labelPosition="left" class="demo-my"></ch-divider>
+        </ch-card-body>
+      </ch-card>
+    </section>
+
+    <!-- STYLE PROPS -->
+    <section id="style-props" class="pg-section">
+      <h2 class="pg-section__title">Style Props</h2>
+
+      <ch-card>
+        <ch-card-header>chBox · chFlex · chGrid · chText · chStack</ch-card-header>
+        <ch-card-body>
+          <div chBox bg="primary.50" p="6" rounded="lg" mb="4">
+            <span chText fontSize="lg" fontWeight="bold" color="primary">chBox</span>
+            <p chText fontSize="sm" color="gray.500">bg="primary.50" p="6" rounded="lg"</p>
+          </div>
+
+          <div chFlex gap="3" align="center" justify="between" mb="4"
+            chBox bg="success-subtle" p="4" rounded="md">
+            <span chText fontWeight="semibold" color="success">Left</span>
+            <ch-spinner size="sm"></ch-spinner>
+            <span chText fontWeight="semibold" color="success">Right</span>
+          </div>
+
+          <div chGrid cols="4" gap="3" mb="4">
+            <div *ngFor="let i of [1,2,3,4,5,6,7,8]"
+              chBox bg="bg-subtle" p="3" rounded="md" style="text-align:center">
+              <span chText fontWeight="bold" color="primary">{{ i }}</span>
+            </div>
+          </div>
+
+          <div chStack spacing="2" direction="column" chBox bg="warning-subtle" p="4" rounded="md">
+            <span chText fontWeight="medium" color="warning">Stack item 1</span>
+            <span chText fontWeight="medium" color="warning">Stack item 2</span>
+            <span chText fontWeight="medium" color="warning">Stack item 3</span>
+          </div>
+        </ch-card-body>
+      </ch-card>
+    </section>
+
+  </div><!-- /.showcase__content -->
+</div><!-- /.showcase -->
+
+<!-- Modal -->
+<ch-modal
+  [isOpen]="modalOpen()"
+  [title]="'showcase.feedback.modalTitle' | translate"
+  size="md"
+  (closed)="modalOpen.set(false)">
+
+  <p>{{ 'showcase.feedback.modalBody' | translate }}</p>
+
+  <div chModalFooter>
+    <ch-button variant="outline" (clicked)="modalOpen.set(false)">{{ 'common.cancel' | translate }}</ch-button>
+    <ch-button colorScheme="primary" (clicked)="modalOpen.set(false)">{{ 'common.confirm' | translate }}</ch-button>
+  </div>
+</ch-modal>
+
+<!-- Drawer -->
+<ch-drawer
+  [isOpen]="drawerOpen()"
+  [title]="'showcase.feedback.drawerTitle' | translate"
+  placement="right"
+  size="md"
+  (closed)="drawerOpen.set(false)">
+
+  <p>This is a <strong>ch-drawer</strong> sliding in from the right.
+    Supports top, right, bottom, and left placements.</p>
+
+  <div chDrawerFooter>
+    <ch-button variant="outline" (clicked)="drawerOpen.set(false)">{{ 'common.close' | translate }}</ch-button>
+  </div>
+</ch-drawer>

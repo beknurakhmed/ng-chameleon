@@ -1,0 +1,41 @@
+<header class="header">
+  <div class="header__inner">
+
+    <!-- Logo -->
+    <a routerLink="/" class="header__logo" [attr.aria-label]="'header.logo' | translate">
+      <span class="header__logo-icon" aria-hidden="true">🦎</span>
+      <span class="header__logo-text">ng-chameleon</span>
+      <ch-badge colorScheme="primary" variant="subtle">v0.1</ch-badge>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="header__nav" role="navigation" [attr.aria-label]="'header.nav' | translate">
+      <a
+        *ngFor="let link of navLinks"
+        [routerLink]="link.path"
+        routerLinkActive="header__nav-link--active"
+        [routerLinkActiveOptions]="{ exact: link.exact }"
+        class="header__nav-link">
+        {{ link.key | translate }}
+      </a>
+    </nav>
+
+    <!-- Right controls -->
+    <div class="header__controls">
+      <ch-spinner
+        *ngIf="loading.isLoading()"
+        size="sm"
+        [attr.aria-label]="'header.loading' | translate">
+      </ch-spinner>
+
+      <pg-lang-switcher></pg-lang-switcher>
+      <pg-theme-switcher></pg-theme-switcher>
+    </div>
+
+  </div>
+
+  <!-- Top loading bar -->
+  <div class="header__progress" *ngIf="loading.isLoading()" role="progressbar" [attr.aria-label]="'header.loading' | translate">
+    <div class="header__progress-bar"></div>
+  </div>
+</header>

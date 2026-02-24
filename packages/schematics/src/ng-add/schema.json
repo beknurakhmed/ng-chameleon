@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "id": "NgChameleonNgAdd",
+  "title": "ng-chameleon setup options",
+  "type": "object",
+  "properties": {
+    "theme": {
+      "description": "Default design system theme",
+      "type": "string",
+      "enum": ["chakra", "material", "antd", "shadcn"],
+      "default": "shadcn",
+      "x-prompt": {
+        "message": "Which theme do you want as default?",
+        "type": "list",
+        "items": [
+          { "value": "shadcn",   "label": "Shadcn/ui (default)" },
+          { "value": "chakra",   "label": "Chakra UI" },
+          { "value": "material", "label": "Material Design" },
+          { "value": "antd",     "label": "Ant Design" }
+        ]
+      }
+    },
+    "colorMode": {
+      "description": "Default color mode",
+      "type": "string",
+      "enum": ["light", "dark", "system"],
+      "default": "system",
+      "x-prompt": {
+        "message": "Default color mode?",
+        "type": "list",
+        "items": [
+          { "value": "system", "label": "Follow system preference (recommended)" },
+          { "value": "light",  "label": "Always light" },
+          { "value": "dark",   "label": "Always dark" }
+        ]
+      }
+    },
+    "styleProps": {
+      "description": "Enable style props directives (chBox, chFlex, chText, etc.)",
+      "type": "boolean",
+      "default": true,
+      "x-prompt": "Enable style props (chBox, chFlex, chText, etc.)?"
+    },
+    "tailwind": {
+      "description": "Configure Tailwind CSS for ng-chameleon",
+      "type": "boolean",
+      "default": true
+    },
+    "project": {
+      "description": "Target Angular project",
+      "type": "string"
+    }
+  }
+}

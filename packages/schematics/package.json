@@ -1,0 +1,19 @@
+{
+  "name": "@chameleon-ui/schematics",
+  "version": "0.1.0",
+  "description": "Angular CLI schematics for ng-chameleon",
+  "keywords": ["schematics", "angular", "ng-chameleon"],
+  "license": "MIT",
+  "schematics": "./collection.json",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "build:watch": "tsc -p tsconfig.json --watch"
+  },
+  "dependencies": {
+    "@angular-devkit/core": "^17.3.0",
+    "@angular-devkit/schematics": "^17.3.0"
+  },
+  "devDependencies": {
+    "typescript": "~5.4.0"
+  }
+}

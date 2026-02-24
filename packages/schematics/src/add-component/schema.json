@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "id": "NgChameleonAddComponent",
+  "title": "Add a ng-chameleon component",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "Component name(s) to add (e.g. button, card input)",
+      "type": "string",
+      "minLength": 1,
+      "$default": { "$source": "argv", "index": 0 },
+      "x-prompt": "Which component(s) do you want to add?"
+    },
+    "path": {
+      "description": "Output path (relative to src/app)",
+      "type": "string",
+      "default": "ui"
+    },
+    "theme": {
+      "description": "Theme to use for the component styles",
+      "type": "string",
+      "enum": ["chakra", "material", "antd", "shadcn"]
+    },
+    "prefix": {
+      "description": "Component selector prefix",
+      "type": "string",
+      "default": "ch"
+    }
+  },
+  "required": ["name"]
+}
