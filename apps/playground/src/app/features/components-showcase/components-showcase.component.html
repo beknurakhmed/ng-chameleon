@@ -604,6 +604,241 @@
       </ch-card>
     </section>
 
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- NEW COMPONENTS                                                -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+
+    <section id="new-inputs" class="pg-section">
+      <h2 class="pg-section__title">New Inputs</h2>
+
+      <ch-card>
+        <ch-card-header>Input Number</ch-card-header>
+        <ch-card-body>
+          <div class="demo-row">
+            <ch-input-number [min]="0" [max]="100" [step]="1" label="Quantity"></ch-input-number>
+            <ch-input-number [min]="0" [max]="1000" [step]="10" label="Disabled" [disabled]="true"></ch-input-number>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Rating</ch-card-header>
+        <ch-card-body>
+          <div class="demo-row demo-row--align-center">
+            <ch-rating [count]="5"></ch-rating>
+            <ch-rating [count]="5" [readonly]="true" [ngModel]="4"></ch-rating>
+            <ch-rating [count]="5" [allowHalf]="true" [ngModel]="3.5"></ch-rating>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Pin Input</ch-card-header>
+        <ch-card-body>
+          <div class="demo-row">
+            <ch-pin-input [length]="4"></ch-pin-input>
+            <ch-pin-input [length]="6" [mask]="true"></ch-pin-input>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Color Picker</ch-card-header>
+        <ch-card-body>
+          <div class="demo-row">
+            <ch-color-picker></ch-color-picker>
+            <ch-color-picker [showText]="false"></ch-color-picker>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Segmented</ch-card-header>
+        <ch-card-body>
+          <div class="demo-row">
+            <ch-segmented [options]="segmentedOpts" [ngModel]="'daily'"></ch-segmented>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Cascader</ch-card-header>
+        <ch-card-body>
+          <div class="demo-row">
+            <ch-cascader [options]="cascaderOpts" placeholder="Select location"></ch-cascader>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Transfer</ch-card-header>
+        <ch-card-body>
+          <ch-transfer [dataSource]="transferData" [showSearch]="true" sourceTitle="Available" targetTitle="Selected"></ch-transfer>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Mentions</ch-card-header>
+        <ch-card-body>
+          <ch-mentions [options]="mentionUsers" placeholder="Type @ to mention someone..." [rows]="3"></ch-mentions>
+        </ch-card-body>
+      </ch-card>
+    </section>
+
+    <section id="new-display" class="pg-section">
+      <h2 class="pg-section__title">New Data Display</h2>
+
+      <ch-card>
+        <ch-card-header>Statistic</ch-card-header>
+        <ch-card-body>
+          <div class="demo-row">
+            <ch-statistic title="Active Users" [value]="1234" trend="up"></ch-statistic>
+            <ch-statistic title="Revenue" value="$56,789" trend="down"></ch-statistic>
+            <ch-statistic title="Orders" [value]="892" suffix="/day"></ch-statistic>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Timeline</ch-card-header>
+        <ch-card-body>
+          <ch-timeline [items]="timelineItems"></ch-timeline>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Steps</ch-card-header>
+        <ch-card-body>
+          <ch-steps [items]="stepItems" [current]="1"></ch-steps>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Calendar</ch-card-header>
+        <ch-card-body>
+          <div style="max-width:320px">
+            <ch-calendar></ch-calendar>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Empty State</ch-card-header>
+        <ch-card-body>
+          <ch-empty description="No results found"></ch-empty>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Keyboard Shortcuts (Kbd)</ch-card-header>
+        <ch-card-body>
+          <div class="demo-row demo-row--align-center">
+            <ch-kbd>Ctrl</ch-kbd> <span>+</span> <ch-kbd>C</ch-kbd>
+            <span style="margin:0 12px">|</span>
+            <ch-kbd>⌘</ch-kbd> <span>+</span> <ch-kbd>K</ch-kbd>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Tree</ch-card-header>
+        <ch-card-body>
+          <ch-tree [data]="treeData" [checkable]="true"></ch-tree>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>List</ch-card-header>
+        <ch-card-body>
+          <ch-list>
+            <ch-list-item description="Frontend Developer" avatar="https://i.pravatar.cc/40?img=1">Alice Johnson</ch-list-item>
+            <ch-list-item description="Backend Developer" avatar="https://i.pravatar.cc/40?img=2">Bob Smith</ch-list-item>
+            <ch-list-item description="Designer" avatar="https://i.pravatar.cc/40?img=3">Carol White</ch-list-item>
+          </ch-list>
+        </ch-card-body>
+      </ch-card>
+    </section>
+
+    <section id="new-actions" class="pg-section">
+      <h2 class="pg-section__title">New Actions &amp; Overlays</h2>
+
+      <ch-card>
+        <ch-card-header>Toggle</ch-card-header>
+        <ch-card-body>
+          <div class="demo-row">
+            <ch-toggle-group>
+              <ch-toggle [pressed]="true"><strong>B</strong></ch-toggle>
+              <ch-toggle><em>I</em></ch-toggle>
+              <ch-toggle><u>U</u></ch-toggle>
+            </ch-toggle-group>
+          </div>
+          <div class="demo-row demo-mt-sm">
+            <ch-toggle variant="outline">Outline</ch-toggle>
+            <ch-toggle [disabled]="true">Disabled</ch-toggle>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Upload (Drag &amp; Drop)</ch-card-header>
+        <ch-card-body>
+          <ch-upload [drag]="true" hint="Supports PNG, JPG, PDF up to 10MB"></ch-upload>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Upload (Picture Card)</ch-card-header>
+        <ch-card-body>
+          <ch-upload listType="picture-card" [multiple]="true"></ch-upload>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Carousel</ch-card-header>
+        <ch-card-body>
+          <div style="max-width:480px">
+            <ch-carousel [autoplay]="true" [interval]="3000">
+              <ch-carousel-slide *ngFor="let c of carouselColors">
+                <div [style.background]="c" style="height:200px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;border-radius:var(--ch-radius-lg)">
+                  {{ c }}
+                </div>
+              </ch-carousel-slide>
+            </ch-carousel>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Result</ch-card-header>
+        <ch-card-body>
+          <ch-result status="success" title="Successfully Purchased!" subtitle="Order number: 2017182818828182881"></ch-result>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Watermark</ch-card-header>
+        <ch-card-body>
+          <div style="position:relative;height:160px;border:1px solid var(--ch-border);border-radius:var(--ch-radius-lg);overflow:hidden">
+            <ch-watermark content="ng-chameleon" [fontSize]="14" [gap]="[80, 80]">
+              <div style="padding:24px">
+                <p>This content is protected with a watermark overlay.</p>
+              </div>
+            </ch-watermark>
+          </div>
+        </ch-card-body>
+      </ch-card>
+
+      <ch-card class="demo-mt">
+        <ch-card-header>Image Preview</ch-card-header>
+        <ch-card-body>
+          <div class="demo-row">
+            <ch-image src="https://picsum.photos/300/200?random=1" alt="Demo image" width="150" [preview]="true"></ch-image>
+            <ch-image src="https://picsum.photos/300/200?random=2" alt="Demo image 2" width="150" [preview]="true"></ch-image>
+          </div>
+        </ch-card-body>
+      </ch-card>
+    </section>
+
   </div><!-- /.showcase__content -->
 </div><!-- /.showcase -->
 

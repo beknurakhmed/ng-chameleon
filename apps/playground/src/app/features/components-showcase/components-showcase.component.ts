@@ -2,7 +2,9 @@ import { Component, signal, inject, AfterViewInit, OnDestroy, NgZone } from '@an
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import type {
   SelectOption, BreadcrumbItem, TableColumn, ComboboxOption,
-  ChartData, MenuItem,
+  ChartData, MenuItem, ChTimelineItem, ChTreeNode,
+  ChCascaderOption, ChTransferItem, ChMentionOption,
+  ChSegmentedOption, ChStep,
 } from 'ng-chameleon';
 import { ChToastService }    from 'ng-chameleon';
 import { TranslationService } from '../../core/i18n/translation.service';
@@ -115,7 +117,70 @@ export class ComponentsShowcaseComponent implements AfterViewInit, OnDestroy {
     { id: 'overlay',      key: 'showcase.sections.overlays'       },
     { id: 'layout',       key: 'layout'                           },
     { id: 'style-props',  key: 'Style Props'                      },
+    { id: 'new-inputs',   key: 'New Inputs'                       },
+    { id: 'new-display',  key: 'New Data Display'                 },
+    { id: 'new-actions',  key: 'New Actions'                      },
   ];
+
+  // ── New component data ─────────────────────────────────────────────────────
+  readonly segmentedOpts: ChSegmentedOption[] = [
+    { label: 'Daily',   value: 'daily' },
+    { label: 'Weekly',  value: 'weekly' },
+    { label: 'Monthly', value: 'monthly' },
+  ];
+
+  readonly cascaderOpts: ChCascaderOption[] = [
+    { value: 'us', label: 'United States', children: [
+      { value: 'ny', label: 'New York' },
+      { value: 'ca', label: 'California' },
+    ]},
+    { value: 'uk', label: 'United Kingdom', children: [
+      { value: 'ld', label: 'London' },
+      { value: 'mc', label: 'Manchester' },
+    ]},
+  ];
+
+  readonly transferData: ChTransferItem[] = [
+    { key: '1', title: 'Item 1' },
+    { key: '2', title: 'Item 2' },
+    { key: '3', title: 'Item 3' },
+    { key: '4', title: 'Item 4' },
+    { key: '5', title: 'Item 5' },
+  ];
+
+  readonly mentionUsers: ChMentionOption[] = [
+    { value: 'alice',  label: 'Alice' },
+    { value: 'bob',    label: 'Bob' },
+    { value: 'charlie', label: 'Charlie' },
+  ];
+
+  readonly timelineItems: ChTimelineItem[] = [
+    { label: 'Created project',    description: 'Initial commit', color: 'green' },
+    { label: 'Added components',   description: 'Button, Input, Card', color: 'blue' },
+    { label: 'Theme engine',       description: '4 design systems' },
+    { label: 'Release v0.2.0',     description: 'Published to npm', color: 'green' },
+  ];
+
+  readonly stepItems: ChStep[] = [
+    { title: 'Account',  description: 'Create your account' },
+    { title: 'Profile',  description: 'Fill in your profile' },
+    { title: 'Complete', description: 'All done!' },
+  ];
+
+  readonly treeData: ChTreeNode[] = [
+    { key: '1', label: 'src', children: [
+      { key: '1-1', label: 'components', children: [
+        { key: '1-1-1', label: 'button.ts', isLeaf: true },
+        { key: '1-1-2', label: 'input.ts', isLeaf: true },
+      ]},
+      { key: '1-2', label: 'utils', children: [
+        { key: '1-2-1', label: 'helpers.ts', isLeaf: true },
+      ]},
+    ]},
+    { key: '2', label: 'package.json', isLeaf: true },
+  ];
+
+  readonly carouselColors = ['#6366f1', '#06b6d4', '#10b981', '#f59e0b'];
 
   // ── Form ───────────────────────────────────────────────────────────────────
   readonly demoForm: FormGroup;
