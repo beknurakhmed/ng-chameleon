@@ -12,74 +12,74 @@
   --ch-font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --ch-font-mono:    'Geist Mono', 'Fira Code', 'Fira Mono', Menlo, monospace;
 
-  /* ── Colors — Primary (Neutral dark, matching shadcn OKLCH baseline) ─── */
-  --ch-primary-50:   #fafafa;
-  --ch-primary-100:  #f5f5f5;
-  --ch-primary-200:  #e5e5e5;
-  --ch-primary-300:  #d4d4d4;
-  --ch-primary-400:  #a3a3a3;
-  --ch-primary-500:  #737373;
-  --ch-primary-600:  #525252;
-  --ch-primary-700:  #404040;
-  --ch-primary-800:  #262626;
-  --ch-primary-900:  #171717;
+  /* ── Colors — Primary (Neutral dark) ────────────────────────── */
+  --ch-primary-50:   hsl(210 40% 98%);
+  --ch-primary-100:  hsl(210 40% 96%);
+  --ch-primary-200:  hsl(214 32% 91%);
+  --ch-primary-300:  hsl(213 27% 84%);
+  --ch-primary-400:  hsl(215 20% 65%);
+  --ch-primary-500:  hsl(215 16% 47%);
+  --ch-primary-600:  hsl(215 19% 35%);
+  --ch-primary-700:  hsl(215 25% 27%);
+  --ch-primary-800:  hsl(217 33% 17%);
+  --ch-primary-900:  hsl(222 47% 11%);
 
-  --ch-primary:       #18181b;  /* oklch(0.205 0 0) → zinc-900 */
-  --ch-primary-hover: #27272a;  /* zinc-800 */
-  --ch-primary-subtle:#fafafa;  /* oklch(0.985 0 0) */
-  --ch-primary-fg:    #fafafa;  /* oklch(0.985 0 0) */
+  --ch-primary:       hsl(222.2 47.4% 11.2%);
+  --ch-primary-hover: hsl(222.2 47.4% 20%);
+  --ch-primary-subtle:hsl(210 40% 98%);
+  --ch-primary-fg:    hsl(210 40% 98%);
 
-  /* ── Colors — Secondary (Neutral muted) ──────────────────────── */
-  --ch-secondary:        #f4f4f5;  /* oklch(0.97 0 0) */
-  --ch-secondary-hover:  #e4e4e7;
-  --ch-secondary-subtle: #fafafa;
+  /* ── Colors — Secondary ─────────────────────────────────────── */
+  --ch-secondary:        hsl(210 40% 96%);
+  --ch-secondary-hover:  hsl(210 40% 90%);
+  --ch-secondary-subtle: hsl(210 40% 98%);
 
   /* ── Semantic Colors ────────────────────────────────────────── */
-  --ch-success:        #16a34a;
-  --ch-success-hover:  #15803d;
-  --ch-success-subtle: #f0fdf4;
-  --ch-success-fg:     #fafafa;
+  --ch-success:        hsl(142 76% 36%);
+  --ch-success-hover:  hsl(142 76% 28%);
+  --ch-success-subtle: hsl(138 76% 97%);
+  --ch-success-fg:     hsl(355 100% 99%);
 
-  --ch-warning:        #ea580c;
-  --ch-warning-hover:  #c2410c;
-  --ch-warning-subtle: #fff7ed;
-  --ch-warning-fg:     #fafafa;
+  --ch-warning:        hsl(32 95% 44%);
+  --ch-warning-hover:  hsl(32 95% 36%);
+  --ch-warning-subtle: hsl(48 100% 96%);
+  --ch-warning-fg:     hsl(355 100% 99%);
 
-  --ch-error:          #dc2626;  /* oklch(0.577 0.245 27.325) → destructive */
-  --ch-error-hover:    #b91c1c;
-  --ch-error-subtle:   #fef2f2;
-  --ch-error-fg:       #fafafa;
+  --ch-error:          hsl(0 84% 60%);
+  --ch-error-hover:    hsl(0 84% 50%);
+  --ch-error-subtle:   hsl(0 86% 97%);
+  --ch-error-fg:       hsl(355 100% 99%);
 
-  --ch-info:           #2563eb;
-  --ch-info-hover:     #1d4ed8;
-  --ch-info-subtle:    #eff6ff;
-  --ch-info-fg:        #fafafa;
+  --ch-info:           hsl(221 83% 53%);
+  --ch-info-hover:     hsl(221 83% 43%);
+  --ch-info-subtle:    hsl(213 100% 96%);
+  --ch-info-fg:        hsl(355 100% 99%);
 
   /* ── Surface Colors ─────────────────────────────────────────── */
-  --ch-bg:             #ffffff;   /* oklch(1 0 0) */
-  --ch-bg-subtle:      #fafafa;   /* oklch(0.985 0 0) */
-  --ch-bg-elevated:    #ffffff;
-  --ch-bg-overlay:     rgba(0,0,0,0.8);
+  --ch-bg:             hsl(0 0% 100%);
+  --ch-bg-subtle:      hsl(210 40% 98%);
+  --ch-bg-elevated:    hsl(0 0% 100%);
+  --ch-bg-overlay:     hsl(0 0% 0% / 0.8);
 
   /* ── Text Colors ────────────────────────────────────────────── */
-  --ch-text:           #09090b;   /* oklch(0.145 0 0) */
-  --ch-text-subtle:    #71717a;   /* oklch(0.556 0 0) */
-  --ch-text-muted:     #a1a1aa;
-  --ch-text-disabled:  #d4d4d8;
-  --ch-text-inverse:   #fafafa;
+  --ch-text:           hsl(222.2 84% 4.9%);
+  --ch-text-subtle:    hsl(215.4 16.3% 46.9%);
+  --ch-text-muted:     hsl(215.4 16.3% 56.9%);
+  --ch-text-disabled:  hsl(215.4 16.3% 76.9%);
+  --ch-text-inverse:   hsl(210 40% 98%);
 
   /* ── Border ─────────────────────────────────────────────────── */
-  --ch-border:         #e4e4e7;   /* oklch(0.922 0 0) */
-  --ch-border-strong:  #d4d4d8;
-  --ch-border-focus:   #18181b;
+  --ch-border:         hsl(214.3 31.8% 91.4%);
+  --ch-border-strong:  hsl(214.3 31.8% 81.4%);
+  --ch-border-focus:   hsl(222.2 47.4% 11.2%);
 
-  /* ── Border Radius (--radius: 0.625rem in shadcn) ─────────── */
+  /* ── Border Radius ──────────────────────────────────────────── */
   --ch-radius-none: 0;
-  --ch-radius-sm:   calc(0.625rem - 4px);  /* ~0.375rem */
-  --ch-radius-md:   calc(0.625rem - 2px);  /* ~0.5rem */
-  --ch-radius-lg:   0.625rem;              /* base radius */
-  --ch-radius-xl:   calc(0.625rem + 4px);  /* ~0.875rem */
-  --ch-radius-2xl:  calc(0.625rem + 8px);  /* ~1.125rem */
+  --ch-radius-sm:   0.375rem;
+  --ch-radius-md:   0.5rem;
+  --ch-radius-lg:   0.75rem;
+  --ch-radius-xl:   1rem;
+  --ch-radius-2xl:  1.25rem;
   --ch-radius-full: 9999px;
 
   /* ── Shadows ────────────────────────────────────────────────── */
@@ -177,14 +177,14 @@
   --ch-badge-py:          0.125rem;
 
   /* ── Shadcn Accent / Muted ────────────────────────────────── */
-  --ch-accent:    #f4f4f5;   /* oklch(0.97 0 0) */
-  --ch-accent-fg: #18181b;   /* oklch(0.205 0 0) */
-  --ch-muted:     #f4f4f5;
-  --ch-muted-fg:  #71717a;   /* oklch(0.556 0 0) */
+  --ch-accent:    hsl(210 40% 96%);
+  --ch-accent-fg: hsl(222.2 47.4% 11.2%);
+  --ch-muted:     hsl(210 40% 96%);
+  --ch-muted-fg:  hsl(215.4 16.3% 46.9%);
 
   /* ── Shadcn Ring ──────────────────────────────────────────── */
-  --ch-ring:        #a1a1aa;  /* oklch(0.708 0 0) */
-  --ch-ring-offset: #ffffff;
+  --ch-ring:        hsl(222.2 47.4% 11.2%);
+  --ch-ring-offset: hsl(0 0% 100%);
 
   /* ── Shadcn Button Tokens ─────────────────────────────────── */
   --ch-btn-outline-border: var(--ch-border);
@@ -204,29 +204,27 @@
 /* ── Dark Mode ─────────────────────────────────────────────────── */
 .ch-theme-shadcn.dark,
 [data-ch-theme='shadcn'][data-ch-color-mode='dark'] {
-  --ch-bg:             #09090b;   /* oklch(0.145 0 0) */
-  --ch-bg-subtle:      #27272a;   /* oklch(0.269 0 0) */
-  --ch-bg-elevated:    #18181b;   /* oklch(0.205 0 0) */
-  --ch-text:           #fafafa;   /* oklch(0.985 0 0) */
-  --ch-text-subtle:    #a1a1aa;   /* oklch(0.708 0 0) */
-  --ch-text-muted:     #71717a;   /* oklch(0.556 0 0) */
-  --ch-border:         rgba(255,255,255,0.1);  /* oklch(1 0 0 / 10%) */
-  --ch-border-strong:  rgba(255,255,255,0.15);
-  --ch-border-focus:   #fafafa;
-  --ch-primary:        #fafafa;   /* oklch(0.922 0 0) inverted */
-  --ch-primary-hover:  #e4e4e7;
-  --ch-primary-fg:     #18181b;   /* oklch(0.205 0 0) */
-  --ch-input-bg:       #09090b;
-  --ch-card-bg:        #18181b;   /* oklch(0.205 0 0) */
-  --ch-card-border:    rgba(255,255,255,0.1);
-  --ch-secondary:      #27272a;
-  --ch-secondary-hover:#3f3f46;
+  --ch-bg:             hsl(222.2 84% 4.9%);
+  --ch-bg-subtle:      hsl(217.2 32.6% 17.5%);
+  --ch-bg-elevated:    hsl(222.2 84% 4.9%);
+  --ch-text:           hsl(210 40% 98%);
+  --ch-text-subtle:    hsl(215 20.2% 65.1%);
+  --ch-text-muted:     hsl(215 20.2% 55.1%);
+  --ch-border:         hsl(217.2 32.6% 17.5%);
+  --ch-border-strong:  hsl(217.2 32.6% 27.5%);
+  --ch-border-focus:   hsl(210 40% 98%);
+  --ch-primary:        hsl(210 40% 98%);
+  --ch-primary-hover:  hsl(210 40% 90%);
+  --ch-primary-fg:     hsl(222.2 47.4% 11.2%);
+  --ch-input-bg:       hsl(222.2 84% 4.9%);
+  --ch-card-bg:        hsl(222.2 84% 4.9%);
+  --ch-card-border:    hsl(217.2 32.6% 17.5%);
 
   /* Shadcn dark accent/muted/ring */
-  --ch-ring:        #71717a;     /* oklch(0.556 0 0) */
-  --ch-ring-offset: #09090b;
-  --ch-accent:      #3f3f46;     /* oklch(0.371 0 0) */
-  --ch-accent-fg:   #fafafa;
-  --ch-muted:       #27272a;
-  --ch-muted-fg:    #a1a1aa;
+  --ch-ring:        hsl(212.7 26.8% 83.9%);
+  --ch-ring-offset: hsl(222.2 84% 4.9%);
+  --ch-accent:      hsl(217.2 32.6% 17.5%);
+  --ch-accent-fg:   hsl(210 40% 98%);
+  --ch-muted:       hsl(217.2 32.6% 17.5%);
+  --ch-muted-fg:    hsl(215 20.2% 65.1%);
 }
