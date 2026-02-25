@@ -139,6 +139,101 @@ export type { ComboboxOption, ComboboxMode } from './lib/components/combobox/com
 export { ChChartComponent }         from './lib/components/chart/chart.component';
 export type { ChartType, ChartData, ChartDataset, ChartOptions } from './lib/components/chart/chart.component';
 
+// InputNumber
+export { InputNumberComponent as ChInputNumberComponent } from './lib/components/input-number/input-number.component';
+
+// Rating
+export { RatingComponent as ChRatingComponent } from './lib/components/rating/rating.component';
+
+// Toggle
+export { ChToggleComponent, ChToggleGroupComponent } from './lib/components/toggle/toggle.component';
+
+// PinInput
+export { PinInputComponent as ChPinInputComponent } from './lib/components/pin-input/pin-input.component';
+
+// Kbd
+export { KbdComponent as ChKbdComponent } from './lib/components/kbd/kbd.component';
+
+// Timeline
+export { ChTimelineComponent }      from './lib/components/timeline/timeline.component';
+export type { ChTimelineItem }      from './lib/components/timeline/timeline.component';
+
+// Statistic
+export { StatisticComponent as ChStatisticComponent } from './lib/components/statistic/statistic.component';
+
+// Empty
+export { EmptyComponent as ChEmptyComponent } from './lib/components/empty/empty.component';
+
+// Steps
+export { StepsComponent as ChStepsComponent } from './lib/components/steps/steps.component';
+export type { StepItem as ChStep }  from './lib/components/steps/steps.component';
+
+// Segmented
+export { SegmentedComponent as ChSegmentedComponent } from './lib/components/segmented/segmented.component';
+export type { SegmentedOption as ChSegmentedOption } from './lib/components/segmented/segmented.component';
+
+// Calendar
+export { CalendarComponent as ChCalendarComponent } from './lib/components/calendar/calendar.component';
+
+// Carousel
+export { ChCarouselComponent, ChCarouselSlideComponent } from './lib/components/carousel/carousel.component';
+
+// Tree
+export { TreeComponent as ChTreeComponent } from './lib/components/tree/tree.component';
+export type { TreeNode as ChTreeNode } from './lib/components/tree/tree.component';
+
+// List
+export { ChListComponent, ChListItemComponent } from './lib/components/list/list.component';
+
+// AlertDialog
+export { AlertDialogComponent as ChAlertDialogComponent } from './lib/components/alert-dialog/alert-dialog.component';
+
+// Result
+export { ResultComponent as ChResultComponent } from './lib/components/result/result.component';
+
+// Watermark
+export { WatermarkComponent as ChWatermarkComponent } from './lib/components/watermark/watermark.component';
+
+// FloatButton
+export { ChFloatButtonComponent, ChFloatButtonGroupComponent } from './lib/components/float-button/float-button.component';
+
+// ImagePreview
+export { ImagePreviewComponent as ChImagePreviewComponent } from './lib/components/image-preview/image-preview.component';
+
+// Notification
+export { ChNotificationContainerComponent, ChNotificationService } from './lib/components/notification/notification.component';
+export type { ChNotificationData }  from './lib/components/notification/notification.component';
+
+// Tour
+export { ChTourComponent }          from './lib/components/tour/tour.component';
+export type { ChTourStep }          from './lib/components/tour/tour.component';
+
+// Upload
+export { ChUploadComponent }        from './lib/components/upload/upload.component';
+export type { ChUploadFile }        from './lib/components/upload/upload.component';
+
+// Transfer
+export { ChTransferComponent }      from './lib/components/transfer/transfer.component';
+export type { ChTransferItem }      from './lib/components/transfer/transfer.component';
+
+// Anchor
+export { ChAnchorComponent, ChAnchorLinkComponent } from './lib/components/anchor/anchor.component';
+
+// ColorPicker
+export { ChColorPickerComponent }   from './lib/components/color-picker/color-picker.component';
+
+// Cascader
+export { ChCascaderComponent }      from './lib/components/cascader/cascader.component';
+export type { ChCascaderOption }    from './lib/components/cascader/cascader.component';
+
+// Mentions
+export { ChMentionsComponent }      from './lib/components/mentions/mentions.component';
+export type { ChMentionOption }     from './lib/components/mentions/mentions.component';
+
+// TreeSelect
+export { ChTreeSelectComponent }    from './lib/components/tree-select/tree-select.component';
+export type { ChTreeSelectNode }    from './lib/components/tree-select/tree-select.component';
+
 import { ChButtonComponent }       from './lib/components/button/helm/button.component';
 import { ChInputComponent }        from './lib/components/input/helm/input.component';
 import { ChCardComponent, ChCardHeaderComponent, ChCardBodyComponent, ChCardFooterComponent } from './lib/components/card/card.component';
@@ -181,6 +276,34 @@ import {
 }                                  from './lib/components/menu/menu.component';
 import { ChComboboxComponent }     from './lib/components/combobox/combobox.component';
 import { ChChartComponent }        from './lib/components/chart/chart.component';
+import { InputNumberComponent }    from './lib/components/input-number/input-number.component';
+import { RatingComponent }         from './lib/components/rating/rating.component';
+import { ChToggleComponent, ChToggleGroupComponent } from './lib/components/toggle/toggle.component';
+import { PinInputComponent }       from './lib/components/pin-input/pin-input.component';
+import { KbdComponent }            from './lib/components/kbd/kbd.component';
+import { ChTimelineComponent }     from './lib/components/timeline/timeline.component';
+import { StatisticComponent }      from './lib/components/statistic/statistic.component';
+import { EmptyComponent }          from './lib/components/empty/empty.component';
+import { StepsComponent }          from './lib/components/steps/steps.component';
+import { SegmentedComponent }      from './lib/components/segmented/segmented.component';
+import { CalendarComponent }       from './lib/components/calendar/calendar.component';
+import { ChCarouselComponent, ChCarouselSlideComponent } from './lib/components/carousel/carousel.component';
+import { TreeComponent }           from './lib/components/tree/tree.component';
+import { ChListComponent, ChListItemComponent } from './lib/components/list/list.component';
+import { AlertDialogComponent }    from './lib/components/alert-dialog/alert-dialog.component';
+import { ResultComponent }         from './lib/components/result/result.component';
+import { WatermarkComponent }      from './lib/components/watermark/watermark.component';
+import { ChFloatButtonComponent, ChFloatButtonGroupComponent } from './lib/components/float-button/float-button.component';
+import { ImagePreviewComponent }   from './lib/components/image-preview/image-preview.component';
+import { ChNotificationContainerComponent } from './lib/components/notification/notification.component';
+import { ChTourComponent }         from './lib/components/tour/tour.component';
+import { ChUploadComponent }       from './lib/components/upload/upload.component';
+import { ChTransferComponent }     from './lib/components/transfer/transfer.component';
+import { ChAnchorComponent, ChAnchorLinkComponent } from './lib/components/anchor/anchor.component';
+import { ChColorPickerComponent }  from './lib/components/color-picker/color-picker.component';
+import { ChCascaderComponent }     from './lib/components/cascader/cascader.component';
+import { ChMentionsComponent }     from './lib/components/mentions/mentions.component';
+import { ChTreeSelectComponent }   from './lib/components/tree-select/tree-select.component';
 import { CHAMELEON_STYLE_PROPS }   from './lib/style-props/index';
 
 export const CHAMELEON_COMPONENTS = [
@@ -232,5 +355,38 @@ export const CHAMELEON_COMPONENTS = [
   ChMenuGroupComponent,
   ChComboboxComponent,
   ChChartComponent,
+  InputNumberComponent,
+  RatingComponent,
+  ChToggleComponent,
+  ChToggleGroupComponent,
+  PinInputComponent,
+  KbdComponent,
+  ChTimelineComponent,
+  StatisticComponent,
+  EmptyComponent,
+  StepsComponent,
+  SegmentedComponent,
+  CalendarComponent,
+  ChCarouselComponent,
+  ChCarouselSlideComponent,
+  TreeComponent,
+  ChListComponent,
+  ChListItemComponent,
+  AlertDialogComponent,
+  ResultComponent,
+  WatermarkComponent,
+  ChFloatButtonComponent,
+  ChFloatButtonGroupComponent,
+  ImagePreviewComponent,
+  ChNotificationContainerComponent,
+  ChTourComponent,
+  ChUploadComponent,
+  ChTransferComponent,
+  ChAnchorComponent,
+  ChAnchorLinkComponent,
+  ChColorPickerComponent,
+  ChCascaderComponent,
+  ChMentionsComponent,
+  ChTreeSelectComponent,
   ...CHAMELEON_STYLE_PROPS,
 ] as const;
