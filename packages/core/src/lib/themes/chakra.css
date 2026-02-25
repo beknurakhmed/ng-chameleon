@@ -73,13 +73,13 @@
   --ch-border-strong:  #CBD5E0;
   --ch-border-focus:   var(--ch-primary-500);
 
-  /* ── Border Radius ──────────────────────────────────────────── */
+  /* ── Border Radius (Chakra v2 exact) ────────────────────────── */
   --ch-radius-none: 0;
-  --ch-radius-sm:   0.125rem;
-  --ch-radius-md:   0.375rem;
-  --ch-radius-lg:   0.5rem;
-  --ch-radius-xl:   0.75rem;
-  --ch-radius-2xl:  1rem;
+  --ch-radius-sm:   2px;     /* radii.sm */
+  --ch-radius-md:   6px;     /* radii.md */
+  --ch-radius-lg:   8px;     /* radii.lg */
+  --ch-radius-xl:   12px;    /* radii.xl */
+  --ch-radius-2xl:  16px;    /* radii.2xl */
   --ch-radius-full: 9999px;
 
   /* ── Shadows ────────────────────────────────────────────────── */
@@ -148,7 +148,7 @@
   --ch-btn-px-sm:      0.75rem;
   --ch-btn-px-md:      1rem;
   --ch-btn-px-lg:      1.5rem;
-  --ch-btn-radius:     var(--ch-radius-md);
+  --ch-btn-radius:     6px;    /* radii.md */
   --ch-btn-font-weight:var(--ch-weight-semibold);
 
   /* ── Component: Input ───────────────────────────────────────── */
@@ -159,8 +159,8 @@
   --ch-input-border:     var(--ch-border);
   --ch-input-border-focus: var(--ch-primary);
   --ch-input-bg:         var(--ch-bg);
-  --ch-input-radius:     var(--ch-radius-md);
-  --ch-input-ring:       0 0 0 3px rgba(49,130,206,0.35);
+  --ch-input-radius:     6px;   /* radii.md */
+  --ch-input-ring:       0 0 0 1px #3182CE;  /* Chakra: borderColor + 1px box-shadow */
 
   /* ── Component: Card ────────────────────────────────────────── */
   --ch-card-bg:          var(--ch-bg-elevated);

@@ -52,7 +52,7 @@
       <div *ngFor="let f of features" class="home__feature-card">
         <ch-card>
           <ch-card-body>
-            <span class="home__feature-icon" aria-hidden="true">{{ f.icon }}</span>
+            <span class="home__feature-icon" aria-hidden="true" [innerHTML]="f.svg"></span>
             <p class="home__feature-title">{{ f.titleKey | translate }}</p>
             <p class="home__feature-desc">{{ f.descKey | translate }}</p>
           </ch-card-body>

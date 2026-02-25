@@ -2,6 +2,7 @@
    Exact values from @angular/material 17 M3 spec.
    Apply: <body class="ch-theme-material"> or ThemeService.setTheme('material')
 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap');
 @import './base.css';
 
 .ch-theme-material,
@@ -139,4 +140,67 @@
   --ch-elevation-3: color-mix(in srgb, var(--ch-primary) 11%, #1C1B1F);
   --ch-elevation-4: color-mix(in srgb, var(--ch-primary) 12%, #1C1B1F);
   --ch-elevation-5: color-mix(in srgb, var(--ch-primary) 14%, #1C1B1F);
+}
+
+/* ══ M3 State Layer Bridge ════════════════════════════════════════
+   Extracted from @angular/material button/_button-base.scss
+   M3 uses state layers: hover=8%, focus=10%, pressed=10%
+   ═══════════════════════════════════════════════════════════════ */
+
+/* State layer pseudo-element for M3 buttons */
+.ch-theme-material ch-button,
+[data-ch-theme='material'] ch-button {
+  position: relative;
+  overflow: hidden;
+}
+.ch-theme-material ch-button::before,
+[data-ch-theme='material'] ch-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-color: currentColor;
+  opacity: 0;
+  transition: opacity 200ms cubic-bezier(0.2, 0, 0, 1);
+  pointer-events: none;
+}
+.ch-theme-material ch-button:hover::before,
+[data-ch-theme='material'] ch-button:hover::before {
+  opacity: 0.08;  /* M3 hover state layer */
+}
+.ch-theme-material ch-button:focus-visible::before,
+[data-ch-theme='material'] ch-button:focus-visible::before {
+  opacity: 0.10;  /* M3 focus state layer */
+}
+.ch-theme-material ch-button:active::before,
+[data-ch-theme='material'] ch-button:active::before {
+  opacity: 0.10;  /* M3 pressed state layer */
+}
+
+/* M3 ripple element (simplified CSS-only ripple) */
+@keyframes ch-m3-ripple {
+  0%   { transform: scale(0); opacity: 0.12; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* M3 overlay backdrop transition — from @angular/cdk */
+@keyframes ch-m3-fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* M3 surface tint for elevated cards */
+.ch-theme-material ch-card,
+[data-ch-theme='material'] ch-card {
+  position: relative;
+}
+.ch-theme-material ch-card.ch-card--elevated::before,
+[data-ch-theme='material'] ch-card.ch-card--elevated::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--ch-primary);
+  opacity: 0.05;
+  pointer-events: none;
 }
