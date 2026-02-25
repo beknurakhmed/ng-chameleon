@@ -1,6 +1,6 @@
 {
   "name": "ng-chameleon",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "One Angular library. Four design systems. React-level DX.",
   "keywords": ["angular", "ui", "components", "design-system", "tailwind"],
   "author": "Beknur Akhmedov <axmbek@gmail.com> (https://github.com/beknurakhmed)",
